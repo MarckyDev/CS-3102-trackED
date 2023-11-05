@@ -1,0 +1,7 @@
+{
+  "name": "testingulet",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
