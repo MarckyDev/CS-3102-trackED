@@ -14,5 +14,13 @@ export const routes: Routes = [
     path: 'main-dashboard2/:id',
     loadComponent: () => import('./pages/reminder-dashboard/reminder-dashboard.page').then( m => m.ReminderDashboardPage)
   },
+  {
+    path: 'login',
+    loadComponent: () => import('./pages/login/login.page').then( m => m.LoginPage)
+  },
+  {
+    path: 'signup',
+    loadComponent: () => import('./pages/signup/signup.page').then( m => m.SignupPage)
+  },
 
 ];
