@@ -1,0 +1,72 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="toolbar-container 
+    ion-align-items-center 
+    ion-justify-content-between">
+      <ion-title>trackED</ion-title>
+      <div></div>
+      <div class="button-list">
+        <ul>
+          <li>
+            <ion-button>Settings</ion-button>
+          </li>
+          <li>
+            <ion-button>Sign Up</ion-button>
+          </li>
+          <li>
+            <ion-button>Log in</ion-button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </ion-toolbar>
+
+  <link rel="stylesheet" href="main-dashboard2.page.scss">
+</ion-header>
+
+
+<ion-content class="ion-padding">
+  <div class="reminder-task-container container">
+    <div class="reminder-container container">
+      <ion-card>
+        <ion-card-header>
+          <h1>Reminders</h1>
+        </ion-card-header>
+        <ion-card-content>
+          <p><strong>Monday:</strong> Take a walk of 30 minutes.</p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+    
+    <div class="task-container container">
+      <ion-accordion-group>
+        <ion-accordion value="first">
+          <ion-item slot="header" color="light">
+            <ion-label>First Accordion</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">First Content</div>
+        </ion-accordion>
+        <ion-accordion value="second">
+          <ion-item slot="header" color="light">
+            <ion-label>Second Accordion</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">Second Content</div>
+        </ion-accordion>
+        <ion-accordion value="third">
+          <ion-item slot="header" color="light">
+            <ion-label>Third Accordion</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">Third Content</div>
+        </ion-accordion>
+      </ion-accordion-group>
+    </div>
+  
+  </div>
+  
+  
+  <div class="calendar-container container">
+    <ion-datetime></ion-datetime>
+
+  </div>
+  
+  </ion-content>  

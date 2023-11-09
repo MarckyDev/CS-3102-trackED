@@ -1,0 +1,22 @@
+.container, .toolbar-container{
+    display: flex;
+}
+
+.toolbar-container{
+    padding: 1em;
+    
+
+    ul{
+        list-style-type: none;
+        display: inline;
+    }
+
+    li{
+        display: inline;  
+    }
+
+} 
+
+.reminder-task-container{
+    flex-direction: column;
+}
