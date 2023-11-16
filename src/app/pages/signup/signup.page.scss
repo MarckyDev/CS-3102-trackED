@@ -1,0 +1,24 @@
+ion-content{
+    align-self: center;
+}
+ion-card{
+    width: 120%;
+    max-width: 500px;
+    height: 600px;
+}
+ion-card-header{
+    align-items: center;
+}
+ion-card-title{
+    font-weight: bold;
+}
+.gender-group{
+    ul{
+        list-style-type: none;
+        display: inline;
+    }
+
+    li{
+        display: inline;  
+    }
+}
