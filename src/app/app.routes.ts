@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'main-dashboard2',
+    redirectTo: 'login',
     pathMatch: 'full',
   },
   {
@@ -15,12 +15,13 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/reminder-dashboard/reminder-dashboard.page').then( m => m.ReminderDashboardPage)
   },
   {
-    path: 'login',
-    loadComponent: () => import('./pages/login/login.page').then( m => m.LoginPage)
-  },
-  {
     path: 'signup',
     loadComponent: () => import('./pages/signup/signup.page').then( m => m.SignupPage)
   },
+  {
+    path: 'login',
+    loadComponent: () => import('./pages/login/login.page').then( m => m.LoginPage)
+  },
+
 
 ];
