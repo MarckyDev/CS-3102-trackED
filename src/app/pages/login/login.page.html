@@ -1,32 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-</head>
-<body>
+<ion-content class="login-content">
+  <ion-card class="login-card">
+    <ion-card-header>
+      <ion-card-title>Log Into taskED</ion-card-title>
+    </ion-card-header>
 
-  <ion-header [translucent]="true">
-    <ion-toolbar>
-      <ion-title>Login</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-card-content>
+      <!-- Login form -->
+      <form>
+        <ion-item>
+          <ion-input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter your email"></ion-input>
+        </ion-item>
 
-  <ion-content [fullscreen]="true">
+        <ion-item>
+          <ion-input type="password" id="password" name="password" required placeholder="Enter your password"></ion-input>
+        </ion-item>
 
-    <!-- Login form -->
-    <form>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
-
-      <button type="submit">Login</button>
-    </form>
-
-  </ion-content>
-
-</body>
-</html>
+        <ion-button type="submit" expand="full" color="primary">Login</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
