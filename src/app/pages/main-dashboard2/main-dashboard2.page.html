@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<!--<ion-header [translucent]="true">
   <ion-toolbar>
     <div class="toolbar-container 
     ion-align-items-center 
@@ -69,4 +69,64 @@
 
   </div>
   
-  </ion-content>  
+  </ion-content>-->
+
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <div class="toolbar-container 
+      ion-align-items-center 
+      ion-justify-content-between">
+        <ion-title>trackED</ion-title>
+        <div></div>
+        <div class="button-list">
+          <ul>
+            <li>
+              <ion-button>Settings</ion-button>
+            </li>
+            <li>
+              <ion-button>Sign Up</ion-button>
+            </li>
+            <li>
+              <ion-button>Log in</ion-button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </ion-toolbar>
+  
+    <link rel="stylesheet" href="main-dashboard2.page.scss">
+  </ion-header>
+
+<ion-content>
+  <!--Full-->
+  <ion-card class = "full">
+    <ion-card-content>
+        <!--Class for the Reminder Card-->
+        <div class = "reminders-container">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Reminder</ion-card-title>
+              <ion-card-subtitle>Date</ion-card-subtitle>
+            </ion-card-header>
+          
+            <ion-card-content>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>
+                <ion-icon name="add"></ion-icon>
+              </ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </div>
+
+        <div class="calendar-container container">
+          <ion-datetime></ion-datetime>
+      
+        </div>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>

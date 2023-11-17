@@ -15,8 +15,45 @@
         display: inline;  
     }
 
-} 
-
-.reminder-task-container{
-    flex-direction: column;
 }
+/*Ion Content Displayed at Full Size**/
+ion-content{
+    height: 100%;
+}
+.full{
+      width: 100%;
+      height: 97%;
+}
+
+/*Displaying the Reminder Card**/
+.full {
+    ion-card {
+      width: 100%;
+      height: 100%;
+    }
+  
+    .reminders-container {
+      ion-card {
+        width: 15%; 
+        height: 30vh; 
+        float: left; 
+      }
+    }
+  }
+  
+  .container {
+    display: flex;
+  }
+  
+  .calendar-container {
+    ion-datetime {
+      margin-left: 60%; 
+    
+    }
+  }
+
+
+  
+  
+  
+
