@@ -1,13 +1,33 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>signup</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">signup</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card>
+    <!--img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" /-->
+    <ion-card-header class="signup">
+      <ion-card-title>Create a new account</ion-card-title>
+      <ion-card-subtitle>Sign Up</ion-card-subtitle>
+    </ion-card-header>
+     
+    <ion-card-content>
+      <form>
+        <ion-item>
+          <ion-input type="text" name="firstname" placeholder="First Name" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input type="text" name="lastname" placeholder="Last Name" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input type="email" name="email" placeholder="Email" required></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-input type="password" name="password" placeholder="Password" required></ion-input>
+        </ion-item>
+
+        <ion-button expand="full" type="submit">Sign Up</ion-button>
+        <a href="login/login.page.html">Already have an account?</a>
+      </form>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
+

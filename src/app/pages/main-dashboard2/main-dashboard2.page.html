@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<!--<ion-header [translucent]="true">
   <ion-toolbar>
     <div class="toolbar-container 
     ion-align-items-center 
@@ -65,8 +65,104 @@
   
   
   <div class="calendar-container container">
-    <ion-datetime></ion-datetime>
+    <ion-datetime presentation="date"></ion-datetime>
+
+    <!-- Para ihighlight yung specific dates sa calendar
+       <IonDatetime
+              color="custom"
+              preferWheel="false"
+              className="some-class"
+              presentation="date-time"
+              highlightedDates={[
+                {
+                  date: "2023-01-05",
+                  textColor: "#800080",
+                  backgroundColor: "#ffc0cb",
+                },
+                {
+                  date: "2023-01-10",
+                  textColor: "#09721b",
+                  backgroundColor: "#c8e5d0",
+                },
+                {
+                  date: "2023-03-20",
+                  textColor: "var(--ion-color-secondary-contrast)",
+                  backgroundColor: "var(--ion-color-secondary)",
+                },
+                {
+                  date: "2023-03-23",
+                  textColor: "rgb(68, 10, 184)",
+                  backgroundColor: "rgb(211, 200, 229)",
+                },
+              ]}
+              onClick={(e) => filterDate(e.target.value)}
+            ></IonDatetime>
+
+
+
+
+    -->
 
   </div>
   
-  </ion-content>  
+  </ion-content>-->
+
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <div class="toolbar-container 
+      ion-align-items-center 
+      ion-justify-content-between">
+        <ion-title>trackED</ion-title>
+        <div></div>
+        <div class="button-list">
+          <ul>
+            <li>
+              <ion-button>Settings</ion-button>
+            </li>
+            <li>
+              <ion-button>Sign Up</ion-button>
+            </li>
+            <li>
+              <ion-button>Log in</ion-button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </ion-toolbar>
+  
+    <link rel="stylesheet" href="main-dashboard2.page.scss">
+  </ion-header>
+
+<ion-content>
+  <!--Full-->
+  <ion-card class = "full">
+    <ion-card-content>
+        <!--Class for the Reminder Card-->
+        <div class = "reminders-container">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Reminder</ion-card-title>
+              <ion-card-subtitle>Date</ion-card-subtitle>
+            </ion-card-header>
+          
+            <ion-card-content>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>
+                <ion-icon name="add"></ion-icon>
+              </ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </div>
+
+        <div class="calendar-container container">
+          <ion-datetime></ion-datetime>
+      
+        </div>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>
