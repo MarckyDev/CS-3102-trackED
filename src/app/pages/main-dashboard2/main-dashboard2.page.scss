@@ -11,7 +11,6 @@
   }
 }
 
-/* Ion Content Displayed at Full Size */
 ion-content {
   height: 100%;
 }
@@ -34,9 +33,9 @@ ion-content {
   }
 
   .notes-container {
-    clear: both; /* Clear the float to move below reminders */
-    width: 40%; /* Adjust the width as needed */
-    margin-top: 20px; /* Adjust the margin as needed */
+    clear: both; 
+    width: 40%; 
+    margin-top: 20px;
 
     ion-card {
       width: 100%;
@@ -44,15 +43,15 @@ ion-content {
     }
   }
 
-  /* Updated styles for the Calendar Container */
+  /* Styles for the Calendar Container */
   .calendar-container {
     margin-left: auto;
-    margin-right: 20px; /* Adjust the margin as needed */
-    margin-top: 20px; /* Adjust the margin as needed */
+    margin-right: 20px; 
+    margin-top: 20px; 
     text-align: right;
 
     ion-datetime {
-      width: 100%; /* Adjust the width as needed */
+      width: 100%; 
     }
   }
 }
