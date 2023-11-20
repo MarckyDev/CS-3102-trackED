@@ -1,4 +1,5 @@
-.container, .toolbar-container {
+.container,
+.toolbar-container {
   display: flex;
 
   ul {
@@ -29,14 +30,15 @@ ion-content {
       width: 15%;
       height: 30vh;
       float: left;
+      margin-bottom: 80px;
     }
   }
 
   .notes-container {
-    clear: both; 
-    width: 40%; 
-    margin-top: 20px;
-
+    clear: both;
+    width: 40%;
+    margin-top: 120px;
+    margin-bottom: 40px; 
     ion-card {
       width: 100%;
       height: 100%;
@@ -45,13 +47,13 @@ ion-content {
 
   /* Styles for the Calendar Container */
   .calendar-container {
-    margin-left: auto;
-    margin-right: 20px; 
-    margin-top: 20px; 
+    position: absolute;
+    top: 40px; 
+    right: 20px;
     text-align: right;
 
     ion-datetime {
-      width: 100%; 
+      width: 100%;
     }
   }
 }
