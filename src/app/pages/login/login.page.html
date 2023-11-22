@@ -4,19 +4,28 @@
       <ion-img src="assets/logos/Brand_Name.png" alt="trackED Logo"></ion-img>
       
     </ion-card-header>
-
+    
     <ion-card-content>
-      <!-- Login form -->
+      <!-- Login form  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"-->
       <form>
         <ion-item>
-          <ion-input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter your email"></ion-input>
+          <ion-input type="email"
+                     #inputUser
+                     required
+                     placeholder="Enter your email"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-input type="password" id="password" name="password" required placeholder="Enter your password"></ion-input>
+          <ion-input type="password"                     
+                     #inputKey
+                     required 
+                     placeholder="Enter your password"></ion-input>
         </ion-item>
 
-        <ion-button type="submit" expand="full" color="primary">Login</ion-button>
+        <ion-button (click)="setValue()" 
+                    expand="full" 
+                    color="primary"> Login
+        </ion-button>
       </form>
     </ion-card-content>
   </ion-card>
