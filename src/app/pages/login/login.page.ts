@@ -8,7 +8,8 @@ import {IonContent,
         IonCardContent,
         IonItem,
         IonInput,
-        IonButton
+        IonButton,
+        IonImg
        } from '@ionic/angular/standalone';
 
 

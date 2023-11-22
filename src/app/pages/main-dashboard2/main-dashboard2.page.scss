@@ -6,25 +6,12 @@
     list-style-type: none;
     display: inline;
   }
-.container,
-.toolbar-container {
-  display: flex;
-
-  ul {
-    list-style-type: none;
-    display: inline;
-  }
 
   li {
     display: inline;
   }
-  li {
-    display: inline;
-  }
+
 }
-
-ion-content {
-  height: 100%;
 
 ion-content {
   height: 100%;
@@ -45,20 +32,9 @@ ion-content {
       height: 30vh;
       float: left;
       margin-bottom: 80px;
-  width: 100%;
-  height: 97%;
+      width: 100%;
+      height: 97%;
 
-  ion-card {
-    width: 100%;
-    height: 100%;
-  }
-
-  .reminders-container {
-    ion-card {
-      width: 15%;
-      height: 30vh;
-      float: left;
-      margin-bottom: 80px;
     }
   }
 
@@ -73,8 +49,7 @@ ion-content {
     }
   }
 
-  /* Styles for the Calendar Container */
-
+  /* Styles for the Notes Container */
   .notes-container {
     clear: both;
     width: 40%;
@@ -99,7 +74,6 @@ ion-content {
     text-align: right;
 
     ion-datetime {
-      width: 100%;
       width: 100%;
     }
   }
