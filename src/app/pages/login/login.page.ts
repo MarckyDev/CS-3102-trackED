@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import {IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonItem, IonInput, IonButton } from '@ionic/angular/standalone';
+import {IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonItem, IonInput, IonButton, IonImg } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +19,8 @@ import {IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonIte
     IonCardContent,
     IonItem,
     IonInput,
-    IonButton
+    IonButton,
+    IonImg
   ]
 })
 export class LoginPage implements OnInit {

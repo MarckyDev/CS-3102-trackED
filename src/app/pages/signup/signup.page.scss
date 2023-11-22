@@ -1,24 +1,33 @@
-ion-content{
-    align-self: center;
-}
-ion-card{
+ion-content {
+    text-align: center;
+    display: flex;
+    align-items: center;
+
+  }
+  ion-card {
+    display: inline-block; /* This is necessary to center the card */
+    text-align: left; /* Reset text alignment for card content */
     width: 120%;
     max-width: 500px;
-    height: 600px;
-}
-ion-card-header{
-    align-items: center;
-}
-ion-card-title{
+    height: 700px;
+  }
+  
+  ion-card-header {
+    text-align: center;
+  }
+  
+  ion-card-title {
     font-weight: bold;
-}
-.gender-group{
-    ul{
-        list-style-type: none;
-        display: inline;
+  }
+  
+  .gender-group {
+    ul {
+      list-style-type: none;
+      display: inline;
     }
-
-    li{
-        display: inline;  
+  
+    li {
+      display: inline;
     }
-}
+  }
+  
