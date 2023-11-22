@@ -36,6 +36,10 @@ export class DatabaseService {
     await this._storage?.clear()
   }
 
+  public async removeKey(key: any){
+    await this._storage?.remove(key)
+  }
+
 
 
 }

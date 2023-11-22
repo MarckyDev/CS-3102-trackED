@@ -9,22 +9,19 @@
       <form>
         <ion-item>
           <ion-input type="email"
-                     class="email"
+                     #inputUser
                      required
-                    
                      placeholder="Enter your email"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-input type="password" 
-                     class="password" 
+          <ion-input type="password"                     
+                     #inputKey
                      required 
                      placeholder="Enter your password"></ion-input>
         </ion-item>
 
-        <ion-button title="Login"
-                    type="submit" 
-                    (click)="setValue()" 
+        <ion-button (click)="setValue()" 
                     expand="full" 
                     color="primary"> Login
         </ion-button>

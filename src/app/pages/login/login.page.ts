@@ -1,4 +1,4 @@
-import { Component, ElementRef} from '@angular/core';
+import { Component, ElementRef, ViewChild} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {IonContent,
@@ -34,41 +34,31 @@ import { DatabaseService } from 'src/app/services/database.service';
 })
 
 export class LoginPage{
-  key: any = "";
-  value: any = "";
+  @ViewChild('inputKey') inputKey!: IonInput;
+  @ViewChild('inputUser') inputUser!: IonInput;
 
-  constructor(private databaseService: DatabaseService, private elementRef: ElementRef) { }
+  constructor(private databaseService: DatabaseService) { }
 
-  async setValue(){
-    this.getUsername();
-    this.getPassword();
-    await this.databaseService.set(this.key, this.value);
-    this.databaseService.viewStorage(); //in theory, it prints the storage 
-    
+  async setValue() {
+    const username = await this.getInputValue(this.inputUser);
+    const passcode = await this.getInputValue(this.inputKey);
+
+    if (username && passcode) {
+      this.databaseService.set(username, passcode);
+      this.databaseService.viewStorage();
+      console.log('Data set successfully.');
+    } else {
+      console.error('Please enter both username and passcode.');
+    }
   }
 
-  async getKey(key_val:any){
-    await this.databaseService.get(key_val)
+  async clear() {
+    this.databaseService.clearStorage();
   }
 
-
-  async getInputElement(class_name:any): Promise<HTMLInputElement>{
-    const IonInputElement = this.elementRef.nativeElement.querySelector(`.${class_name}`);
-    return await IonInputElement.getInputElement();
-  }
-
-  async getUsername(){
-    const value = this.getInputElement('email');
-    this.value = value;
-  }
-
-  async getPassword(){
-    const value = this.getInputElement('password');
-    this.key = value;
-  }
-
-  async clear(){
-    this.databaseService.clearStorage()
+  private async getInputValue(input: IonInput): Promise<string> {
+    const inputElement = await input.getInputElement();
+    return inputElement.value || '';
   }
 
 

@@ -20,7 +20,7 @@ bootstrapApplication(AppComponent, {
     provideIonicAngular(),
     importProvidersFrom(IonicStorageModule.forRoot({
       name: 'localdb',
-      driverOrder: [Drivers.IndexedDB, Drivers.LocalStorage]
+      driverOrder: [Drivers.IndexedDB]
     })
 
     ),
