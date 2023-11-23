@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { IonInput } from '@ionic/angular/standalone';
 
 import { Storage } from '@ionic/storage-angular';
 
@@ -8,7 +9,11 @@ import { Storage } from '@ionic/storage-angular';
 export class DatabaseService {
   private _storage: Storage | null = null;
 
-  constructor(private storage: Storage) { }
+  constructor(private storage: Storage) {
+    this._storage = storage;
+    this._storage.create();
+  
+  }
 
   async init(){
     const storage = await this.storage.create();
@@ -40,6 +45,10 @@ export class DatabaseService {
     await this._storage?.remove(key)
   }
 
+  public async getInputValue(input: IonInput): Promise<string> {
+    const inputElement = await input.getInputElement();
+    return inputElement.value || '';
+  }
 
 
 }

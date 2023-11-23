@@ -1,40 +1,44 @@
 <ion-content>
+  
   <div class="ion-align-items-center">
-  <ion-card>
-    <ion-card-header class="signup">
-      <br>
-      <img alt="tracked logo" src="assets/logos/Brand_Identity.png" style="width: 95%; height: auto">
-      <br>
-      <br>
-      <br>
-      <ion-card-title>Create a new account</ion-card-title>
-      <ion-card-subtitle>Sign Up</ion-card-subtitle>
-    </ion-card-header>
-     
-    <ion-card-content>
-      <form>
-        <ion-item>
-          <ion-input type="text" name="firstname" placeholder="First Name" required></ion-input>
-        </ion-item>
+    <ion-card>
 
-        <ion-item>
-          <ion-input type="text" name="lastname" placeholder="Last Name" required></ion-input>
-        </ion-item>
+      <ion-card-header class="signup">
+        <br>
+        <img alt="tracked logo" src="assets/logos/Brand_Identity.png" style="width: 95%; height: auto">
+        <br>
+        <br>
+        <br>
+        <ion-card-title>Create a new account</ion-card-title>
+        <ion-card-subtitle>Sign Up</ion-card-subtitle>
+      </ion-card-header>
+      
+      <ion-card-content>
+        <form>
+          <ion-item>
+            <ion-input type="text" name="firstname" placeholder="First Name" required #firstName></ion-input>
+          </ion-item>
 
-        <ion-item>
-          <ion-input type="email" name="email" placeholder="Email" required></ion-input>
-        </ion-item>
-    
-        <ion-item>
-          <ion-input type="password" name="password" placeholder="Password" required></ion-input>
-        </ion-item>
+          <ion-item>
+            <ion-input type="text" name="lastname" placeholder="Last Name" required #lastName></ion-input>
+          </ion-item>
 
-        <ion-button expand="full" type="submit">Sign Up</ion-button>
-        <a href="login/login.page.html">Already have an account?</a>
-      </form>
-    </ion-card-content>
-  </ion-card>
-</div>
+          <ion-item>
+            <ion-input type="email" name="email" placeholder="Email" required #email></ion-input>
+          </ion-item>
+      
+          <ion-item>
+            <ion-input type="password" name="password" placeholder="Password" required #password></ion-input>
+          </ion-item>
+
+          <ion-button expand="full" type="submit" (click)="setValue()">Sign Up</ion-button>
+          <a href="login/login.page.html">Already have an account?</a>
+        </form>
+      </ion-card-content>
+      
+    </ion-card>
+  </div>
+
 </ion-content>
 
 

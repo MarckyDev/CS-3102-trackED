@@ -1,7 +1,7 @@
 <ion-content class="login-content">
   <ion-card class="login-card">
     <ion-card-header>
-      <ion-img src="assets/logos/Brand_Name.png" alt="trackED Logo" style="width: 10%; height: auto;"></ion-img>
+      <ion-img src="assets/logos/Brand_Name.png" alt="trackED Logo" style="width: 97%; height: auto;"></ion-img>
       
     </ion-card-header>
     
@@ -17,7 +17,7 @@
 
         <ion-item>
           <ion-input type="password"                     
-                     #inputKey
+                     #inputPassword
                      required 
                      placeholder="Enter your password"></ion-input>
         </ion-item>
@@ -25,6 +25,10 @@
         <ion-button (click)="setValue()" 
                     expand="full" 
                     color="primary"> Login
+        </ion-button>
+        <ion-button (click)="clear()" 
+                    expand="full" 
+                    color="primary"> Clear
         </ion-button>
       </form>
     </ion-card-content>
