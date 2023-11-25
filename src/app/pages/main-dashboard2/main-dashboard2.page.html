@@ -1,9 +1,10 @@
 <ion-header>
   <ion-toolbar>
     <div class="toolbar-container ion-align-items-center ion-justify-content-between">
-      <img src="assets/logos/Brand_LogoName.png" alt=" TrackED Logo" style="width: 13%; height: auto;">
+      <img src="assets/logos/Brand_LogoName.png" alt="TrackED Logo" style="width: 13%; height: auto;">
       
       <div></div>
+      
       <div class="button-list">
         <ul>
           <li>
@@ -21,13 +22,14 @@
   </ion-toolbar>
 
   <link rel="stylesheet" href="main-dashboard2.page.scss">
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
 </ion-header>
 
 <ion-content>
   <!-- Full -->
   <ion-card class="full">
     <ion-card-content>
-      <!-- Class for the Reminder Card -->
+      <!-- Reminder Card -->
       <div class="reminders-container">
         <ion-card>
           <ion-card-header>
@@ -48,28 +50,29 @@
         </ion-card>
       </div>
 
-      <!-- New Div for Notes -->
+      <div class="division"></div>
+
       <div class="notes-container">
-        <ion-card class="notes-card">
+        <ion-card class="notes-card" *ngFor="let note of notes">
           <ion-card-header>
             <ion-card-title>Notes</ion-card-title>
+            <ion-card-subtitle>New note content</ion-card-subtitle>
           </ion-card-header>
           <ion-card-content>
-            <!-- Content for Notes -->
-          </ion-card-content>
-        </ion-card>
-
-        <ion-card class="notes-card">
-          <ion-card-header>
-            <ion-card-title> </ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <!-- Content for Notes -->
+            <ion-textarea placeholder="Enter your note here..." [(ngModel)]="note.content"></ion-textarea>
           </ion-card-content>
         </ion-card>
       </div>
 
-      <!-- Calendar --> 
+<!-- Add ion-fab button for Notes -->
+<ion-fab vertical="bottom" horizontal="center" slot="fixed" class="bottom-center">
+  <ion-fab-button (click)="addNote()">
+    +
+  </ion-fab-button>
+</ion-fab>
+
+
+      <!-- Calendar Container -->
       <div class="calendar-container">
         <ion-datetime></ion-datetime>
       </div>

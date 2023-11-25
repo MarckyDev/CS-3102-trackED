@@ -1,3 +1,4 @@
+/* Global styles for container and toolbar */
 .container,
 .toolbar-container {
   display: flex;
@@ -10,13 +11,15 @@
   li {
     display: inline;
   }
-
 }
 
+/* Styles for ion-content */
 ion-content {
   height: 100%;
+  position: relative;
 }
 
+/* Styles for full width and height cards */
 .full {
   width: 100%;
   height: 97%;
@@ -26,50 +29,76 @@ ion-content {
     height: 100%;
   }
 
+  /* Styles for the reminder container */
   .reminders-container {
     ion-card {
       width: 15%;
       height: 30vh;
       float: left;
       margin-bottom: 80px;
-      width: 100%;
+      width: 50%;
       height: 97%;
-
     }
   }
 
+  /* Styles for the division between Notes and Reminders */
+  .division {
+    border-top: 2px solid #ccc;
+    margin: 20px 0;
+  }
+
+  /* Styles for the notes container */
   .notes-container {
     clear: both;
-    width: 40%;
-    margin-top: 120px;
-    margin-bottom: 40px; 
+    width: 45%;
+    height: 300px; /* Set a fixed height */
+    margin-top: 20px;
+    margin-bottom: 40px;
+    position: relative;
+
     ion-card {
+      position: relative;
       width: 100%;
-      height: 100%;
+      height: 50%;
+
+      /* Styles for the notes card */
+      &:hover {
+        background-color: #7EAFC8;
+        transform: scale(1.1);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+    }
+
+    /* Styles for the ion-fab button */
+    .bottom-center {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
     }
   }
 
-  /* Styles for the Notes Container */
-  .notes-container {
-    clear: both;
-    width: 40%;
-    margin-top: 120px;
-    margin-bottom: 40px; 
-    ion-card {
-      width: 100%;
-      height: 100%;
+  /* Styles for the ion-fab button */
+  ion-fab {
+    ion-fab-button {
+      background-color: transparent;
+      font-size: 40px;
+      width: 50px;
+      height: 50px;
+      --box-shadow: none;
+      z-index: 2;
+
+      ion-icon {
+        font-size: 40px;
+      }
     }
   }
 
-  /* Styles for the Calendar Container */
+  /* Styles for the calendar container */
   .calendar-container {
     position: absolute;
-    top: 40px; 
-    right: 20px;
-    text-align: right;
-
-    position: absolute;
-    top: 40px; 
+    top: 40px;
     right: 20px;
     text-align: right;
 

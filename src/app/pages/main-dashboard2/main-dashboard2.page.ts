@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+// Import necessary modules and ChangeDetectorRef
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-
 import {
   IonToolbar,
   IonAccordion,
@@ -44,13 +44,22 @@ import {
     IonFab,
     IonFabButton,
     IonIcon,
-    IonButton
-  ]
+    IonButton,
+  ],
 })
 export class MainDashboard2Page implements OnInit {
-  constructor() {}
+  notes: any[] = [];
+
+  constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnInit() {
-    // Your initialization code here
+    // Initialize notes array with an empty note
+    this.notes.push({});
+  }
+
+  addNote() {
+    // Add a new empty note to the array
+    this.notes.push({});
+    this.cdr.detectChanges(); // Manually trigger change detection
   }
 }
