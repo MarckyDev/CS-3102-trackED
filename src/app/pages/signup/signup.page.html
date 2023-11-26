@@ -1,40 +1,59 @@
 <ion-content>
   <div class="ion-align-items-center">
-  <ion-card>
-    <ion-card-header class="signup">
-      <br>
-      <img alt="tracked logo" src="assets/logos/Brand_Identity.png" style="width: 95%; height: auto">
-      <br>
-      <br>
-      <br>
-      <ion-card-title>Create a new account</ion-card-title>
-      <ion-card-subtitle>Sign Up</ion-card-subtitle>
-    </ion-card-header>
-     
-    <ion-card-content>
-      <form>
-        <ion-item>
-          <ion-input type="text" name="firstname" placeholder="First Name" required></ion-input>
-        </ion-item>
+    <ion-card>
+      <ion-card-header class="signup">
+        <ion-card-title>Create a new account</ion-card-title>
+      </ion-card-header>
 
-        <ion-item>
-          <ion-input type="text" name="lastname" placeholder="Last Name" required></ion-input>
-        </ion-item>
+      <ion-card-content>
+        <form>
 
-        <ion-item>
-          <ion-input type="email" name="email" placeholder="Email" required></ion-input>
-        </ion-item>
-    
-        <ion-item>
-          <ion-input type="password" name="password" placeholder="Password" required></ion-input>
-        </ion-item>
+          <ion-label position="floating" for="firstname">First Name:</ion-label>
+          <ion-input type="text" name="firstname" required></ion-input>
+       
+          <ion-label position="floating" for="lastname">Last Name:</ion-label>
+          <ion-input type="text" name="lastname" required></ion-input>
 
-        <ion-button expand="full" type="submit">Sign Up</ion-button>
-        <a href="login/login.page.html">Already have an account?</a>
-      </form>
-    </ion-card-content>
-  </ion-card>
-</div>
+          <ion-label position="floating" for="email">Email:</ion-label>
+          <ion-input type="email" name="email" required></ion-input>
+
+          <ion-label position="floating" for="password">Password:</ion-label>
+          <ion-input type="password" name="password" required></ion-input>
+
+          <div class="gender">
+          <ion-label position="floating" for="gender">Gender:</ion-label>
+          <ion-select name="gender" interface="popover" placeholder="Select Gender" required>
+              <ion-select-option value="male">Male</ion-select-option>
+              <ion-select-option value="female">Female</ion-select-option>
+              <ion-select-option value="other">Other</ion-select-option>
+          </ion-select>
+          </div>
+
+          <ion-label for="birthday">Birthday:</ion-label>
+            <div class="birthday">
+              <ion-select name="birthMonth" interface="popover" placeholder="Select Month" required>
+                <ion-select-option value="1">January</ion-select-option>
+                <ion-select-option value="2">February</ion-select-option>
+                <ion-select-option value="3">March</ion-select-option>
+                <ion-select-option value="4">April</ion-select-option>
+                <ion-select-option value="5">May</ion-select-option>
+                <ion-select-option value="6">June</ion-select-option>
+                <ion-select-option value="7">July</ion-select-option>
+                <ion-select-option value="8">August</ion-select-option>
+                <ion-select-option value="9">September</ion-select-option>
+                <ion-select-option value="10">October</ion-select-option>
+                <ion-select-option value="11">November</ion-select-option>
+                <ion-select-option value="12">December</ion-select-option>
+              </ion-select>
+              <ion-input type="number" name="birthDay" placeholder=" Day" min="1" max="31" required></ion-input>
+              <ion-input type="number" name="birthYear" placeholder=" Year" min="1920" max="2023" required></ion-input>
+           </div>
+
+          <ion-button expand="full" type="submit">Sign Up</ion-button>
+        </form>
+
+        <p>Already have an account? <a href="login/login.page.html">Log in</a></p>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
-
-

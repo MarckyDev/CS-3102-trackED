@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { IonCard, IonCardHeader, IonCardTitle, IonCardContent, 
-  IonCardSubtitle, IonItem, IonInput, IonLabel, IonButton} from '@ionic/angular/standalone';
+  IonCardSubtitle, IonItem, IonInput, IonLabel, IonButton, IonSelect, IonSelectOption} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-signup',
@@ -11,7 +11,7 @@ import { IonCard, IonCardHeader, IonCardTitle, IonCardContent,
   styleUrls: ['./signup.page.scss'],
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule, IonCard, IonCardHeader, IonCardTitle, IonCardContent, 
-    IonCardSubtitle, IonItem, IonInput, IonLabel, IonButton]
+    IonCardSubtitle, IonItem, IonInput, IonLabel, IonButton, IonSelect, IonSelectOption]
 })
 export class SignupPage implements OnInit {
 
