@@ -5,11 +5,15 @@ describe('MainDashboard2Page', () => {
   let component: MainDashboard2Page;
   let fixture: ComponentFixture<MainDashboard2Page>;
 
-  beforeEach(async(() => {
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [MainDashboard2Page],
+    });
+
     fixture = TestBed.createComponent(MainDashboard2Page);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  }));
+  });
 
   it('should create', () => {
     expect(component).toBeTruthy();

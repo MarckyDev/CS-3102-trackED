@@ -9,7 +9,9 @@ import {IonContent,
         IonItem,
         IonInput,
         IonButton,
-        IonImg
+        IonImg,
+        IonLabel,
+        IonCardSubtitle
        } from '@ionic/angular/standalone';
 
 
@@ -31,7 +33,9 @@ import { DatabaseService } from 'src/app/services/database.service';
     IonItem,
     IonInput,
     IonButton,
-    IonImg
+    IonImg,
+    IonLabel,
+    IonCardSubtitle
   ]
 })
 

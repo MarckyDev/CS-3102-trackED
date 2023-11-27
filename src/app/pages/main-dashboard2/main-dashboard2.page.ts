@@ -60,6 +60,6 @@ export class MainDashboard2Page implements OnInit {
   addNote() {
     // Add a new empty note to the array
     this.notes.push({});
-    this.cdr.detectChanges(); // Manually trigger change detection
+    this.cdr.detectChanges();
   }
 }

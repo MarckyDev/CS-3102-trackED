@@ -1,32 +1,22 @@
-<ion-content class="login-content">
-  <ion-card class="login-card">
+<ion-content>
+  <div class="ion-align-items-center">
+  <ion-card>
     <ion-card-header>
-      <ion-img src="assets/logos/Brand_Name.png" alt="trackED Logo" style="width: 10%; height: auto;"></ion-img>
-      
+      <ion-card-title>Log In</ion-card-title>
+      <ion-card-subtitle>Welcome back! Please login to your account.</ion-card-subtitle>
     </ion-card-header>
-    
     <ion-card-content>
-      <!-- Login form  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"-->
       <form>
-        <ion-item>
-          <ion-input type="email"
-                     #inputUser
-                     required
-                     placeholder="Enter your email"></ion-input>
-        </ion-item>
+        <ion-label position="floating" for="email">Enter Email:</ion-label>
+          <ion-input type="email" name="email" required></ion-input>
+       
+          <ion-label position="floating" for="password">Enter Password:</ion-label>
+          <ion-input type="password" name="password" required></ion-input>
 
-        <ion-item>
-          <ion-input type="password"                     
-                     #inputKey
-                     required 
-                     placeholder="Enter your password"></ion-input>
-        </ion-item>
-
-        <ion-button (click)="setValue()" 
-                    expand="full" 
-                    color="primary"> Login
-        </ion-button>
+          <ion-button expand="full" type="submit">Log In</ion-button>
+          <p>Does not have an account? <a href="signup/signup.page.html">Sign Up</a></p>
       </form>
     </ion-card-content>
   </ion-card>
+  </div>
 </ion-content>

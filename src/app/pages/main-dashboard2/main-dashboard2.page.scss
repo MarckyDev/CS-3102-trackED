@@ -1,5 +1,4 @@
-/* Global styles for container and toolbar */
-.container,
+
 .toolbar-container {
   display: flex;
 
@@ -7,7 +6,6 @@
     list-style-type: none;
     display: inline;
   }
-
   li {
     display: inline;
   }
@@ -51,7 +49,7 @@ ion-content {
   .notes-container {
     clear: both;
     width: 45%;
-    height: 300px; /* Set a fixed height */
+    height: 300px;
     margin-top: 20px;
     margin-bottom: 40px;
     position: relative;

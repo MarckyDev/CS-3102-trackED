@@ -1,81 +1,74 @@
 <ion-header>
-  <ion-toolbar>
-    <div class="toolbar-container ion-align-items-center ion-justify-content-between">
-      <img src="assets/logos/Brand_LogoName.png" alt="TrackED Logo" style="width: 13%; height: auto;">
-      
-      <div></div>
-      
-      <div class="button-list">
-        <ul>
-          <li>
-            <ion-button>Settings</ion-button>
-          </li>
-          <li>
-            <ion-button>Sign Up</ion-button>
-          </li>
-          <li>
-            <ion-button>Log in</ion-button>
-          </li>
-        </ul>
+    <ion-toolbar>
+      <div class="toolbar-container ion-align-items-center ion-justify-content-between">
+        <img src="assets/logos/Brand_LogoName.png" alt="TrackED Logo" style="width: 13%; height: auto;">
+        
+        <div class="button-list">
+          <ul>
+            <li>
+              <ion-button>Settings</ion-button>
+            </li>
+            <li>
+              <ion-button>Sign Up</ion-button>
+            </li>
+            <li>
+              <ion-button>Log in</ion-button>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </ion-toolbar>
+    </ion-toolbar>
+  </ion-header>
 
-  <link rel="stylesheet" href="main-dashboard2.page.scss">
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
-</ion-header>
 
 <ion-content>
-  <!-- Full -->
-  <ion-card class="full">
+  <ion-card class="dashboard-card">
     <ion-card-content>
-      <!-- Reminder Card -->
-      <div class="reminders-container">
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>Reminder</ion-card-title>
-            <ion-card-subtitle>Date</ion-card-subtitle>
-          </ion-card-header>
-          <ion-card-content>
-            <!-- Content for Reminder Card -->
-          </ion-card-content>
-        </ion-card>
+        <!--Remider Card Section-->
+        <div class="reminders-card">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Tasks Today</ion-card-title>
+              <ion-card-subtitle>Date</ion-card-subtitle>
+            </ion-card-header>
+          </ion-card>
+          <ion-card>
+            <ion-card-content>
+              <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+                <ion-fab-button>
+                  <ion-icon name="add-circle"></ion-icon>
+                </ion-fab-button>
+              </ion-fab>              
+            </ion-card-content>
+          </ion-card>
+        </div>
 
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>
-              <ion-icon name="add"></ion-icon>
-            </ion-card-title>
-          </ion-card-header>
-        </ion-card>
-      </div>
+        <!--Notes Card Section-->
 
-      <div class="division"></div>
+        <div class="notes-container">
+          <ion-card class="notes-card" *ngFor="let note of notes">
+            <ion-card-header>
+              <ion-card-title>Notes</ion-card-title>
+              <ion-card-subtitle>New note content</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-textarea placeholder="Enter your note here..." [(ngModel)]="note.content"></ion-textarea>
+            </ion-card-content>
+          </ion-card>
 
-      <div class="notes-container">
-        <ion-card class="notes-card" *ngFor="let note of notes">
-          <ion-card-header>
-            <ion-card-title>Notes</ion-card-title>
-            <ion-card-subtitle>New note content</ion-card-subtitle>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-textarea placeholder="Enter your note here..." [(ngModel)]="note.content"></ion-textarea>
-          </ion-card-content>
-        </ion-card>
-      </div>
+          <!-- Add ion-fab button for Notes -->
+          <ion-fab vertical="bottom" horizontal="center" slot="fixed" class="bottom-center">
+            <ion-fab-button (click)="addNote()">
+              +
+            </ion-fab-button>
+          </ion-fab>
+        </div>
 
-<!-- Add ion-fab button for Notes -->
-<ion-fab vertical="bottom" horizontal="center" slot="fixed" class="bottom-center">
-  <ion-fab-button (click)="addNote()">
-    +
-  </ion-fab-button>
-</ion-fab>
+        <!-- Calendar Container -->
+        <div class="calendar-container">
+          <ion-datetime></ion-datetime>
+        </div>
 
-
-      <!-- Calendar Container -->
-      <div class="calendar-container">
-        <ion-datetime></ion-datetime>
-      </div>
     </ion-card-content>
-  </ion-card>
+  </ion-card> <!--Ending tag of the Ion Card for the Whole Dashboard-->
 </ion-content>
