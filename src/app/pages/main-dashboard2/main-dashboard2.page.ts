@@ -19,6 +19,12 @@ import {
   IonFabButton,
   IonIcon,
   IonButton,
+  IonTabBar,
+  IonTabs,
+  IonTabButton,
+  IonSplitPane,
+  IonRouterOutlet,
+  
 } from '@ionic/angular/standalone';
 
 @Component({
@@ -44,7 +50,12 @@ import {
     IonFab,
     IonFabButton,
     IonIcon,
-    IonButton
+    IonButton,
+    IonTabBar,
+    IonTabs,
+    IonTabButton,
+    IonSplitPane,
+    IonRouterOutlet
   ]
 })
 export class MainDashboard2Page implements OnInit {
