@@ -4,6 +4,15 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { addIcons } from "ionicons";
+
+import { 
+  clipboardOutline,
+  checkmarkCircleOutline,
+  notificationsOutline,
+  homeOutline,
+
+} from "ionicons/icons";
+
 import { 
   IonButton,
   IonIcon,
@@ -20,13 +29,7 @@ import {
   IonMenu
  } from "@ionic/angular/standalone";
 
-import { 
-  clipboardOutline,
-  checkmarkCircleOutline,
-  notificationsOutline,
-  homeOutline,
 
-} from "ionicons/icons";
 
 
 @Component({
@@ -56,9 +59,6 @@ import {
 export class SideMenuPage{
   constructor(private router: Router) {
     
-    
-
-
     addIcons({ 
       clipboardOutline,
       checkmarkCircleOutline,
@@ -70,7 +70,6 @@ export class SideMenuPage{
   navigate(url: string) {
     this.router.navigateByUrl(url);
    }
-
-    
+ 
 }
 

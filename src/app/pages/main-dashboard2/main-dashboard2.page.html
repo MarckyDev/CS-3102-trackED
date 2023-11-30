@@ -1,7 +1,9 @@
 <link rel="stylesheet" href="main-dashboard2.page.scss">
 
-<ion-content>
-<div class="task-related-container container">
+<ion-content class="ion-justify-content-between">
+<div class="task-related-container 
+            container 
+            ">
   <div class="greeting">
     <p>Hello, Robert</p>
     <h2>You've got tasks today</h2>
@@ -12,7 +14,7 @@
       <ion-card-header>
         <!-- {{task_num}} -->
       </ion-card-header>
-      <ion-card-content>
+      <ion-card-content class="task">
         Current task
       </ion-card-content>
 
@@ -22,7 +24,7 @@
       <ion-card-header>
         <!-- {{total_task_num}} -->
       </ion-card-header>
-      <ion-card-content>
+      <ion-card-content class="task">
         Overall tasks
       </ion-card-content>
       
@@ -32,16 +34,22 @@
       <ion-card-header>
        <!-- {{finished_task_num}}  -->
       </ion-card-header>
-      <ion-card-content>
+      <ion-card-content class="task">
         Finished tasks
       </ion-card-content>
       
     </ion-card>
     
   </div>
-
+  <div></div>
   <div class="current-tasks-container">
-
+    <div class="task-header container">
+      <h2>Today's Tasks</h2>
+    <ion-button>
+      <ion-icon name="add" slot="start"></ion-icon>
+      Add new task
+    </ion-button>
+    </div>
   </div>
 
 

@@ -2,7 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { addIcons } from "ionicons";
 
+import { 
+  clipboardOutline,
+  checkmarkCircleOutline,
+  notificationsOutline,
+  homeOutline,
+  add
+
+} from "ionicons/icons";
 import {
   IonToolbar,
   IonAccordion,
@@ -36,11 +45,8 @@ import {
     IonicModule,
     CommonModule,
     FormsModule,
-    IonToolbar,
-    IonAccordion,
     IonItem,
     IonLabel,
-    IonAccordionGroup,
     IonCard,
     IonCardContent,
     IonCardHeader,
@@ -51,17 +57,24 @@ import {
     IonFabButton,
     IonIcon,
     IonButton,
-    IonTabBar,
-    IonTabs,
-    IonTabButton,
-    IonSplitPane,
-    IonRouterOutlet
   ]
 })
 export class MainDashboard2Page implements OnInit {
-  constructor() {}
+  constructor() {
+
+
+    addIcons({ 
+      clipboardOutline,
+      checkmarkCircleOutline,
+      notificationsOutline,
+      homeOutline,
+      add
+     })
+  }
 
   ngOnInit() {
     // Your initialization code here
   }
+
+ 
 }
