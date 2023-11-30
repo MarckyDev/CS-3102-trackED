@@ -10,4 +10,24 @@
       <ion-title size="large">notes</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <div class="notes-container">
+    <ion-card class="notes-card" *ngFor="let note of notes">
+      <ion-card-header>
+        <ion-card-title>
+          <ion-icon name="add" (click)="handleAddIconClick()"></ion-icon>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-textarea placeholder="Enter your note here..." [(ngModel)]="note.content"></ion-textarea>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- Add ion-fab button for Notes -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" class="bottom-center-right">
+    <ion-fab-button color="primary" (click)="addNote()">
+      +
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
