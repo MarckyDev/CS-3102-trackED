@@ -48,6 +48,7 @@ import {
 })
 export class NotesPage {
   notes: any[] = [];
+  constructor(){}
 
   addNote() {
     // Implement the logic to add a new note

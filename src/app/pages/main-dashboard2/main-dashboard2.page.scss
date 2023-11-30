@@ -1,18 +1,37 @@
-.container, ion-content{
+.container{
   display:flex;
 }
 
-.current-tasks-container{
-  .task-header{
+.flex-box-container{
+  border: 1px red dashed;
+
+  .tasks-number-container{
     flex-direction: row;
+  }
+
+  .flex-container-1,
+  .flex-container-2{
+    flex-direction: column;
   }
 }
 
-
-.task-related-container{
-  flex-direction: column;
+.flex-container-1,
+.greeting,
+.tasks-number-container{
+  border: 1px blue dashed;
 }
 
-ion-content{
-  padding-left: 3.2rem;
+.flex-container-2{
+  border: 1px green dashed;
+}
+
+.container1-tasks{
+  .header{
+    display: inline-flex;
+
+  }
+
+  ion-button{
+    margin-left: 30px;
+  }
 }

@@ -60,9 +60,9 @@ import {
   ]
 })
 export class MainDashboard2Page implements OnInit {
+  tasks: any[] = [];
+
   constructor() {
-
-
     addIcons({ 
       clipboardOutline,
       checkmarkCircleOutline,
@@ -74,6 +74,10 @@ export class MainDashboard2Page implements OnInit {
 
   ngOnInit() {
     // Your initialization code here
+  }
+
+  addTasks(){
+    this.tasks.push({});
   }
 
  
