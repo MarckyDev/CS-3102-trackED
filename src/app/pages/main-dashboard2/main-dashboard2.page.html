@@ -1,15 +1,54 @@
 <link rel="stylesheet" href="main-dashboard2.page.scss">
 
-<<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>notes</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+<div class="task-related-container container">
+  <div class="greeting">
+    <p>Hello, Robert</p>
+    <h2>You've got tasks today</h2>
+  </div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">notes</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="tasks-number-container container">
+    <ion-card>
+      <ion-card-header>
+        <!-- {{task_num}} -->
+      </ion-card-header>
+      <ion-card-content>
+        Current task
+      </ion-card-content>
+
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <!-- {{total_task_num}} -->
+      </ion-card-header>
+      <ion-card-content>
+        Overall tasks
+      </ion-card-content>
+      
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+       <!-- {{finished_task_num}}  -->
+      </ion-card-header>
+      <ion-card-content>
+        Finished tasks
+      </ion-card-content>
+      
+    </ion-card>
+    
+  </div>
+
+  <div class="current-tasks-container">
+
+  </div>
+
+
+
+</div>
+
+<div class="calendar-reminder">
+
+</div>
 </ion-content>

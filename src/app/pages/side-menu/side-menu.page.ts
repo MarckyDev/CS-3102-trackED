@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
@@ -13,7 +14,10 @@ import {
   IonHeader,
   IonTitle,
   IonImg,
-  IonRouterOutlet
+  IonRouterOutlet,
+  IonItem,
+  IonList,
+  IonMenu
  } from "@ionic/angular/standalone";
 
 import { 
@@ -23,6 +27,7 @@ import {
   homeOutline,
 
 } from "ionicons/icons";
+
 
 @Component({
   selector: 'app-side-menu',
@@ -42,11 +47,18 @@ import {
     IonHeader,
     IonTitle,
     IonImg,
-    IonRouterOutlet
+    IonRouterOutlet,
+    IonItem,
+    IonList,
+    IonMenu
   ]
 })
-export class SideMenuPage implements OnInit {
-  constructor() { 
+export class SideMenuPage{
+  constructor() {
+    
+    
+
+
     addIcons({ 
       clipboardOutline,
       checkmarkCircleOutline,
@@ -55,7 +67,7 @@ export class SideMenuPage implements OnInit {
      })
   }
 
-  ngOnInit() {
-  }
 
+    
 }
+

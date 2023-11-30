@@ -2,40 +2,28 @@
 
   <ion-menu contentId="main">
     <ion-content>
-      <ul>
-        <li class="brand-identity">
-          <ion-img src="src/assets/logos/Brand_Identity.png" alt="Brand_Identity"></ion-img>
-        </li>
-        <li>
-          <ion-button tab="main-dashboard2" fill="clear" href="/side-menu/main-dashboard2" routerLink="/app/main-dashboard2" routerDirection="root" routerLinkActive="active-link">
-            <ion-icon name="home-outline" slot="start"></ion-icon>
-            Dashboard
-          </ion-button>
-        </li>
-  
-        <li>
-          <ion-button tab="To-do" fill="clear" href="/side-menu/To-do" routerLink="/app/To-do" routerDirection="root" routerLinkActive="active-link">
-            <ion-icon name="checkmark-circle-outline" slot="start"></ion-icon>
-            To-do      
-          </ion-button>
-        </li>
-  
-        <li>
-          <ion-button tab="Notifications" fill="clear" href="/side-menu/Notifications" routerLink="/app/Notifications" routerDirection="root" routerLinkActive="active-link">
-            <ion-icon name="notifications-outline" slot="start"></ion-icon>
-            Notifications
-          </ion-button>
-        </li>
-  
-        <li>
-          <ion-button tab="Notes" fill="clear" href="/side-menu/Notes" routerLink="/app/Notes" routerDirection="root" routerLinkActive="active-link">
-            <ion-icon name="clipboard-outline" slot="start"></ion-icon>
-            Notes
-          </ion-button>
-        </li>
-      </ul>  
-    </ion-content>
-        
+      <ion-list lines="none">
+        <ion-item button="true" href="app/main-dashboard2" routerLink="/main-dashboard2" routerDirection="root" routerLinkActive="active-link">
+          <ion-icon name="home-outline" slot="start"></ion-icon>
+          Dashboard
+        </ion-item>
+      
+        <ion-item button="true" href="app/To-do" routerLink="/To-do" routerDirection="root" routerLinkActive="active-link">
+          <ion-icon name="checkmark-circle-outline" slot="start"></ion-icon>
+          To-do      
+        </ion-item>
+      
+        <ion-item button="true" href="app/Notifications" routerLink="/Notifications" routerDirection="root" routerLinkActive="active-link">
+          <ion-icon name="notifications-outline" slot="start"></ion-icon>
+          Notifications
+        </ion-item>
+      
+        <ion-item button="true" href="app/Notes" routerLink="/Notes" routerDirection="root" routerLinkActive="active-link">
+          <ion-icon name="clipboard-outline" slot="start"></ion-icon>
+          Notes
+        </ion-item>
+      </ion-list> 
+    </ion-content>     
   </ion-menu>
   
   <ion-router-outlet id="main"></ion-router-outlet>
