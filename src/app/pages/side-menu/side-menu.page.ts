@@ -54,7 +54,7 @@ import {
   ]
 })
 export class SideMenuPage{
-  constructor() {
+  constructor(private router: Router) {
     
     
 
@@ -67,6 +67,9 @@ export class SideMenuPage{
      })
   }
 
+  navigate(url: string) {
+    this.router.navigateByUrl(url);
+   }
 
     
 }
