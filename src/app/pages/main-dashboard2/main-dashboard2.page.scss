@@ -13,8 +13,18 @@
   .flex-container-1,
   .flex-container-2{
     flex-direction: column;
+    
+  }
+
+}
+
+.tasks-number-container{
+  ion-card{
+    width: 200%;
+    height: auto;
   }
 }
+
 
 .flex-container-1,
 .greeting,
@@ -33,7 +43,6 @@
 .container1-tasks{
   .header{
     display: inline-flex;
-
   }
 
   ion-button{

@@ -2,7 +2,10 @@
 
 <ion-content>
 
-  <div class="flex-box-container container">
+  <div class="flex-box-container
+  container
+  ion-justify-content-around
+  ion-align-items-stretch">
     <div class="flex-container-1
                 container 
                 ion-justify-content-between">
@@ -11,7 +14,9 @@
         <h2>You've got 6 tasks today</h2>
       </div>
 
-      <div class="tasks-number-container container">
+      <div class="tasks-number-container 
+      container
+      ion-justify-content-around">
         <ion-card>
           <ion-card-header>
             <!-- {{task_num}} -->
@@ -68,11 +73,16 @@
       
     </div>
 
-    <div class="flex-container-2 container">
+    <div class="flex-container-separator"></div>
+
+    <div class="flex-container-2
+    container
+    ion-justify-content-around
+    ion-align-self-end ">
 
       <div class="user-calendar">
         <h2>Firstname + Lastname's Dashboard</h2>
-        <div class="myCalendar">
+        <div class="myCalendar ion-float-right">
           <ion-datetime></ion-datetime> <!-- Calendar  -->
         </div>
       </div>
