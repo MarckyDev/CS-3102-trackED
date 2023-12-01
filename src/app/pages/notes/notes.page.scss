@@ -1,49 +1,116 @@
-/* Styles for the notes container */
-.notes-container {
-    clear: both;
-    width: 70%;
-    height: 300px;
-    margin-top: 20px;
-    margin-bottom: 40px;
-    position: relative;
-  
-    ion-card {
-      position: relative;
+/* notes.page.scss */
+
+/* Styles for ion-card-content */
+ion-card-content {
+  font-size: 20px;
+  text-align: justify;
+}
+
+/* Styles for ion-card-header and ion-input */
+ion-card-header ion-input {
+  font-size: 2rem;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+
+/* Styles for ion-header and ion-toolbar */
+ion-header ion-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 16px;
+
+  /* Styles for .search-and-fab-container */
+  .search-and-fab-container {
+    display: flex;
+    align-items: center;
+
+    /* Styles for ion-searchbar */
+    ion-searchbar {
       width: 100%;
-      height: 50%;
-  
-      /* Styles for the notes card */
-      &:hover {
-        background-color: #7EAFC8;
-        transform: scale(1.1);
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-      }
+      max-width: 82%;
+      margin: 45px 0 0 0;
+      margin-left: 100px;
+      --background: #B9D3EC;
     }
-  }
-  
-   /* Styles for the ion-fab button */
-   .bottom-center {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
-  }
 
-
-/* Styles for the ion-fab button */
-ion-fab {
-  ion-fab-button {
-    background-color: transparent;
-    font-size: 40px;
-    width: 50px;
-    height: 50px;
-    --box-shadow: none;
-    z-index: 2;
-
-    ion-icon {
-      font-size: 40px;
+    /* Styles for ion-fab */
+    ion-fab {
+      margin-left: 10px;
     }
   }
 }
-  
+
+/* Styles for the notes container */
+.notes-container {
+  clear: both;
+  width: 83%;
+  height: 300px;
+  margin: 40px auto 0;
+  position: relative;
+
+  /* Styles for ion-card inside .notes-container */
+  ion-card {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    border: 2px solid #3880FF;
+    margin-bottom: 20px;
+
+    /* Styles for the notes card */
+    &:hover {
+      transform: scale(1.1);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    /* Styles for ion-card-header */
+    ion-card-header {
+      position: relative; /* Reset position */
+      height: 30px; /* Adjust height as needed */
+      margin-bottom: 8px; /* Add margin between title and content */
+    }
+
+    /* Styles for ion-card-content */
+    ion-card-content {
+      font-size: 20px;
+      text-align: justify;
+    }
+
+    /* Styles for buttons in horizontal line */
+    .horizontal-buttons {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      display: flex;
+
+      ion-button {
+        margin-left: 8px;
+      }
+    }
+  }
+}
+
+/* Styles for the ion-fab button */
+.upper-center {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+}
+
+/* Styles for ion-fab button and ion-icon */
+ion-fab ion-fab-button {
+  background-color: transparent;
+  font-size: 40px;
+  width: 45px;
+  height: 45px;
+  margin-top: 25px;
+  margin-right: 40px;
+  --box-shadow: none;
+  z-index: 2;
+
+  ion-icon {
+    font-size: 35px;
+    --background: #2095F2;
+  }
+}

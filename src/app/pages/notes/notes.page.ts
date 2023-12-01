@@ -1,11 +1,13 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import {
   IonToolbar,
+  IonTextarea,
   IonAccordion,
   IonItem,
+  IonInput,
   IonLabel,
   IonAccordionGroup,
   IonCard,
@@ -17,6 +19,7 @@ import {
   IonFab,
   IonFabButton,
   IonIcon,
+  IonSearchbar,
   IonButton,
 } from '@ionic/angular/standalone';
 
@@ -27,11 +30,14 @@ import {
   standalone: true,
   imports: [
     IonicModule,
+    IonTextarea,
     CommonModule,
     FormsModule,
     IonToolbar,
     IonAccordion,
     IonItem,
+    IonInput,
+    IonSearchbar,
     IonLabel,
     IonAccordionGroup,
     IonCard,
@@ -44,20 +50,41 @@ import {
     IonFabButton,
     IonIcon,
     IonButton,
+    FormsModule,
   ],
 })
-export class NotesPage {
+export class NotesPage implements OnInit {
   notes: any[] = [];
-  constructor(){}
 
-  addNote() {
-    // Implement the logic to add a new note
-    this.notes.push({});
-    // You might also perform additional logic or update other properties as needed.
+  ngOnInit() {
+    // Add an initial note
+    this.addNote();
   }
 
-  handleAddIconClick() {
-    // Implement the logic for the click event of the add icon
-    // You can add specific functionality here
+  addNote() {
+    const newNoteNumber = this.notes.length + 1;
+    const newNote = {
+      title: `Notes ${newNoteNumber}`,
+      content: '',
+    };
+    this.notes.push(newNote);
+  }
+
+  editNote(note: any) {
+    // Implement edit functionality
+    console.log('Edit Note:', note);
+  }
+
+  deleteNote(note: any) {
+    // Implement delete functionality
+    const index = this.notes.indexOf(note);
+    if (index !== -1) {
+      this.notes.splice(index, 1);
+    }
+  }
+
+  saveNote(note: any) {
+    // Implement save functionality
+    console.log('Save Note:', note);
   }
 }

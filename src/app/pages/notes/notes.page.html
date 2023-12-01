@@ -1,33 +1,39 @@
-<ion-header [translucent]="true">
+<!-- notes.page.html -->
+
+<ion-header>
   <ion-toolbar>
-    <ion-title>notes</ion-title>
+    <div class="search-and-fab-container">
+      <ion-searchbar placeholder="Search in notes..."></ion-searchbar>
+      <ion-fab vertical="top" horizontal="end" slot="fixed" class="upper-center">
+        <ion-fab-button color="primary" (click)="addNote()">
+          +
+        </ion-fab-button>
+      </ion-fab>
+    </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">notes</ion-title>
-    </ion-toolbar>
   </ion-header>
 
   <div class="notes-container">
-    <ion-card class="notes-card" *ngFor="let note of notes">
+    <ion-card class="notes-card" *ngFor="let note of notes" [hidden]="notes.length === 0">
       <ion-card-header>
-        <ion-card-title>
-          <ion-icon name="add" (click)="handleAddIconClick()"></ion-icon>
-        </ion-card-title>
+        <ion-input [(ngModel)]="note.title" placeholder="Note Title"></ion-input>
+        <ion-fab-button size="small" color="warning" (click)="editNote(note)">
+          <ion-icon name="create-outline"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button size="small" color="danger" (click)="deleteNote(note)">
+          <ion-icon name="trash-outline"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button size="small" color="success" (click)="saveNote(note)">
+          <ion-icon name="checkmark-outline"></ion-icon>
+        </ion-fab-button>
       </ion-card-header>
       <ion-card-content>
-        <ion-textarea placeholder="Enter your note here..." [(ngModel)]="note.content"></ion-textarea>
+        <ion-textarea [(ngModel)]="note.content" placeholder="Enter your note here..."></ion-textarea>
       </ion-card-content>
     </ion-card>
   </div>
-
-  <!-- Add ion-fab button for Notes -->
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed" class="bottom-center-right">
-    <ion-fab-button color="primary" (click)="addNote()">
-      +
-    </ion-fab-button>
-  </ion-fab>
 </ion-content>
