@@ -1,13 +1,54 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>to-do</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+    <div class="flex-box-container
+                container
+                ion-justify-content-around">
+        <div class="flex-container-left
+                    container">
+            <div class="label">
+                <h2>TO DO</h2>
+            </div>
+            <div class="ion-segment-container 
+                        container
+                        ion-justify-content-evenly">
+                <ion-segment value="default">
+                    <ion-segment-button value="default">
+                        <ion-label>On Going</ion-label>
+                    </ion-segment-button>
+                    <ion-segment-button value="accomplished">
+                        <ion-label>Accomplished</ion-label>
+                    </ion-segment-button>
+                    <ion-segment-button value="missed">
+                        <ion-label>Missed</ion-label>
+                    </ion-segment-button>
+                </ion-segment>
+            </div>   
+        </div> 
+        
+        <div class="flex-container-right
+                    container">
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">to-do</ion-title>
-    </ion-toolbar>
-  </ion-header>
+      <div class="user-calendar">
+        <h2>Firstname + Lastname's Dashboard</h2>
+        <div class="myCalendar">
+          <ion-datetime></ion-datetime> <!-- Calendar  -->
+        </div>
+      </div>
+
+      <div class="container2-reminders"> <!-- REMINDER CONTAINER  -->
+        <div class="header">
+          <h5>Reminders</h5>
+          
+        </div>
+
+        <div class="reminder-collection">
+          <ion-card>
+            <ion-card-content>
+              fakfhlasdfjasldkfjaskldf
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </div>
+
+    </div>
+    </div>       
 </ion-content>
