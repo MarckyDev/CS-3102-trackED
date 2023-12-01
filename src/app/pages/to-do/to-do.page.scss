@@ -1,77 +1,55 @@
-.tab-titles{
-    display: flex;
-    margin: 20px 0 40px;
-}
-.tab-titles{
-    font-weight:bolder;
-    background-color: aqua;
-}
-.tab-links{
-    margin-right: 50px;
-    font-size: 18px;
-    font-weight: 500;
-    cursor: pointer;
-    position: relative;
-}
-.tab-links::after{
-    content:'';
-    width: 0;
-    height: 3px;
-    background: rgb(0, 4, 255);
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    transition: 0.2s;
-}
-.tab-links.active-link::after{
-    width: 50%;
-}
-.tab-content ul li{
-    list-style: none;
-    margin: 10px 0;
-}
-.tab-content ul li span{
-    font-size: 17px;
-    font-weight: bold;
-}
-.tab-content{
-    display: none;
-}
-.tab-content.active-tab{
-    display: block;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+.container {
+  display: flex;
 }
 
-
-.container{
-    display:flex;
-  } 
-    .flex-container-1,
-    .flex-container-2{
-      flex-direction: column;
-    }
-  
-  
-  .flex-container-1,
-  .greeting,
-  .tasks-number-container{
+.flex-box-container {
+  //Flex Container left
+  .flex-container-left {
+    flex-direction: column;
     border: 1px blue dashed;
     width: 750px;
-    height: 722px;
-  }
-  
-  .flex-container-2{
+    height: 735px;
+
+    //For Greetings
+    .label {
+      margin-top: 30px;
+      h2 {
+        font-size: 30px;
+        font-weight: bold;
+        margin-left: 30px;
+      }
+    }
+    .ion-segment-container {
+       margin-left: 5px;
+       margin-right: 5px;
+    }
+    }
+
+  //Flex Container right
+  .flex-container-right {
+    align-self: center;
+    flex-direction: column;
     border: 1px green dashed;
     width: 400px;
-    height: 722px;
-  }
-  
-  .container1-tasks{
-    .header{
-      display: inline-flex;
-  
+    height: 735px;
+
+    .user-calendar{
+      margin-top: 25px;
+      margin-left: 10px;
+      h2{
+        font-size: 24px;
+        font-weight: 100;
+      }
     }
-  
-    ion-button{
-      margin-left: 30px;
+    .myCalendar{
+      margin-left: -5px;
+    }
+    .container2-reminders{
+      .header{
+        margin-left: 10px;
+      }
     }
   }
+}

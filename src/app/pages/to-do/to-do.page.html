@@ -1,41 +1,54 @@
 <ion-content>
-  <ion-label>To Do</ion-label>
-  <div class="flex-container container">
-    <div class="flex-container-1 container">
-      <div class="tab-titles">
-          <p class="tab-links active-link" onclick="opentab('on_going')">On Going</p>
-          <p class="tab-links" onclick="opentab('accomplished')">Accomplished</p>
-          <p class="tab-links" onclick="opentab('missed')">Missed</p>
-      </div>
-
-        <div class="tab-content active-tab" id="personal_info"></div>
-        <div class="tab-content" id="education"></div>
-        <div class="tab-content" id="interests"></div>
-      </div>
-
-  <div class="flex-container-2 container">
-
-    <div class="user-calendar">
-      <h2>Firstname + Lastname's Dashboard</h2>
-      <div class="myCalendar">
-        <ion-datetime></ion-datetime> <!-- Calendar  -->
-      </div>
-    </div>
-
-    <div class="container2-reminders"> <!-- REMINDER CONTAINER  -->
-      <div class="header">
-        <h5>Reminders</h5>
+    <div class="flex-box-container
+                container
+                ion-justify-content-around">
+        <div class="flex-container-left
+                    container">
+            <div class="label">
+                <h2>TO DO</h2>
+            </div>
+            <div class="ion-segment-container 
+                        container
+                        ion-justify-content-evenly">
+                <ion-segment value="default">
+                    <ion-segment-button value="default">
+                        <ion-label>On Going</ion-label>
+                    </ion-segment-button>
+                    <ion-segment-button value="accomplished">
+                        <ion-label>Accomplished</ion-label>
+                    </ion-segment-button>
+                    <ion-segment-button value="missed">
+                        <ion-label>Missed</ion-label>
+                    </ion-segment-button>
+                </ion-segment>
+            </div>   
+        </div> 
         
+        <div class="flex-container-right
+                    container">
+
+      <div class="user-calendar">
+        <h2>Firstname + Lastname's Dashboard</h2>
+        <div class="myCalendar">
+          <ion-datetime></ion-datetime> <!-- Calendar  -->
+        </div>
       </div>
 
-      <div class="reminder-collection">
-        <ion-card>
-          <ion-card-content>
-            fakfhlasdfjasldkfjaskldf
-          </ion-card-content>
-        </ion-card>
+      <div class="container2-reminders"> <!-- REMINDER CONTAINER  -->
+        <div class="header">
+          <h5>Reminders</h5>
+          
+        </div>
+
+        <div class="reminder-collection">
+          <ion-card>
+            <ion-card-content>
+              fakfhlasdfjasldkfjaskldf
+            </ion-card-content>
+          </ion-card>
+        </div>
       </div>
+
     </div>
-  </div>
-</div>
+    </div>       
 </ion-content>
