@@ -10,6 +10,8 @@ import { environment } from './environments/environment';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { Drivers } from '@ionic/storage';
 
+import { HttpClientModule } from '@angular/common/http';
+
 if (environment.production) {
   enableProdMode();
 }
@@ -22,8 +24,8 @@ bootstrapApplication(AppComponent, {
       name: 'localdb',
       driverOrder: [Drivers.IndexedDB]
     })
-
     ),
     provideRouter(routes),
+    importProvidersFrom(HttpClientModule),
   ],
 });

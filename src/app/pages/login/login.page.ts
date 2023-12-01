@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild} from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {IonContent,
@@ -35,11 +35,11 @@ import { DatabaseService } from 'src/app/services/database.service';
   ]
 })
 
-export class LoginPage{
+export class LoginPage implements OnInit {
   @ViewChild('inputPassword') inputPassword!: IonInput;
   @ViewChild('inputUser') inputUser!: IonInput;
 
-  constructor(private databaseService: DatabaseService) { }
+  constructor(private databaseService: DatabaseService) {}
 
   async setValue() {
     const username = await this.databaseService.getInputValue(this.inputUser);
@@ -57,6 +57,11 @@ export class LoginPage{
 
   async clear() {
     this.databaseService.clearStorage();
+  }
+
+  ngOnInit() {
+    // Your initialization code here
+    this.databaseService.getUserData();
   }
 
   

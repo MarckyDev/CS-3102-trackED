@@ -56,7 +56,7 @@ import {
     IonMenu
   ]
 })
-export class SideMenuPage{
+export class SideMenuPage implements OnInit{
   constructor(private router: Router) {
     
     addIcons({ 
@@ -70,6 +70,10 @@ export class SideMenuPage{
   navigate(url: string) {
     this.router.navigateByUrl(url);
    }
+
+   ngOnInit() {
+    // Your initialization code here
+  }
  
 }
 

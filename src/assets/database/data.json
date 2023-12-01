@@ -1,0 +1,20 @@
+[
+    {
+        "firstName": "John",
+        "lastName": "Doe",
+        "eMail":"john.doe@hotmail.com",
+        "password":"break_na_kathniel",
+        "notes":[
+            {
+                "noteTitle": "Day 1 of my TrackED Journey",
+                "noteBody": "The more I used this app, it gave me more time and ways to be efficient in my homework"
+            }
+        ],
+        "tasks":[
+            {
+                "taskTitle":"Task",
+                "taskBody":"Meet Jason at 9:00am at Valley street"
+            }
+        ]
+    }
+]
