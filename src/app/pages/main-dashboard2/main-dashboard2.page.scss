@@ -1,5 +1,6 @@
 .container{
   display:flex;
+  font-family: ;
 }
 
 .flex-box-container{
@@ -19,10 +20,14 @@
 .greeting,
 .tasks-number-container{
   border: 1px blue dashed;
+  width: 750px;
+  height: 722px;
 }
 
 .flex-container-2{
   border: 1px green dashed;
+  width: 400px;
+  height: 722px;
 }
 
 .container1-tasks{

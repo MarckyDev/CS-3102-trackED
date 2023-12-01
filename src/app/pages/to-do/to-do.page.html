@@ -1,13 +1,41 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>to-do</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+  <ion-label>To Do</ion-label>
+  <div class="flex-container container">
+    <div class="flex-container-1 container">
+      <div class="tab-titles">
+          <p class="tab-links active-link" onclick="opentab('on_going')">On Going</p>
+          <p class="tab-links" onclick="opentab('accomplished')">Accomplished</p>
+          <p class="tab-links" onclick="opentab('missed')">Missed</p>
+      </div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">to-do</ion-title>
-    </ion-toolbar>
-  </ion-header>
+        <div class="tab-content active-tab" id="personal_info"></div>
+        <div class="tab-content" id="education"></div>
+        <div class="tab-content" id="interests"></div>
+      </div>
+
+  <div class="flex-container-2 container">
+
+    <div class="user-calendar">
+      <h2>Firstname + Lastname's Dashboard</h2>
+      <div class="myCalendar">
+        <ion-datetime></ion-datetime> <!-- Calendar  -->
+      </div>
+    </div>
+
+    <div class="container2-reminders"> <!-- REMINDER CONTAINER  -->
+      <div class="header">
+        <h5>Reminders</h5>
+        
+      </div>
+
+      <div class="reminder-collection">
+        <ion-card>
+          <ion-card-content>
+            fakfhlasdfjasldkfjaskldf
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
+  </div>
+</div>
 </ion-content>
