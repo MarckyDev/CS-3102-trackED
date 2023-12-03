@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, 
@@ -14,6 +14,7 @@ import { IonContent,
         } from '@ionic/angular/standalone';
 
 import { DatabaseService } from 'src/app/services/database.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -33,14 +34,15 @@ import { DatabaseService } from 'src/app/services/database.service';
             IonLabel,
             IonButton]
 })
-export class SignupPage{
+export class SignupPage implements OnInit{
 
- 
+  user:String;
   @ViewChild('firstName') firstName!: IonInput;
   @ViewChild('lastName') lastName!: IonInput;
   @ViewChild('email') email!: IonInput;
   @ViewChild('password') password!: IonInput;
 
+  
 
 
   // FORMAT
@@ -49,17 +51,43 @@ export class SignupPage{
   
 
 
-  constructor(private databaseService: DatabaseService) { }
+  constructor(private databaseService: DatabaseService, private router: Router) { }
 
-  async setValue(){
 
+  ngOnInit(){
+
+  }
+
+  async onSubmit(){
+    
     const first_name = await this.databaseService.getInputValue(this.firstName);
     const last_name = await this.databaseService.getInputValue(this.lastName);
     const e_mail = await this.databaseService.getInputValue(this.email);
     const passkey = await this.databaseService.getInputValue(this.password);
-    const data = [first_name.toString(), e_mail.toString(), passkey.toString()]
-    this.databaseService.set(last_name.toString(), data);
+
+    let note = {title:String, body:String};
+    let task = {title:String, body:String, dueDate:String, completed:Boolean};
+
+    let user = {
+      firstName: first_name.toString(),
+      lastName:last_name.toString(),
+      email:e_mail.toString(),
+      password:passkey.toString(),
+      notes:[note],
+      tasks:[task]
+    }
+    
+   
+    this.databaseService.set('Users', JSON.stringify(user));
   }
+
+
+  navigate(url: string){
+    this.router.navigateByUrl(url);
+  }
+
+
+ 
 
 
 

@@ -2,6 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+
+import { addIcons } from "ionicons";
+
+import { 
+  createOutline,
+  trashOutline,
+  checkmarkOutline,
+} from "ionicons/icons";
+
+
 import {
   IonToolbar,
   IonTextarea,
@@ -55,6 +65,14 @@ import {
 })
 export class NotesPage implements OnInit {
   notes: any[] = [];
+
+  constructor(){
+    addIcons({ 
+      createOutline,
+      trashOutline,
+      checkmarkOutline,
+     })
+  }
 
   ngOnInit() {
     // Add an initial note

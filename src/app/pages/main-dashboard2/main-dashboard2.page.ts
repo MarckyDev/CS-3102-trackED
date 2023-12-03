@@ -36,6 +36,10 @@ import {
   
 } from '@ionic/angular/standalone';
 
+import { DatabaseService } from 'src/app/services/database.service';
+
+
+
 @Component({
   selector: 'app-main-dashboard',
   templateUrl: './main-dashboard2.page.html',
@@ -61,8 +65,11 @@ import {
 })
 export class MainDashboard2Page implements OnInit {
   tasks: any[] = [];
+  key = this.database.get('Users');
+ 
 
-  constructor() {
+
+  constructor(private database: DatabaseService) {
     addIcons({ 
       clipboardOutline,
       checkmarkCircleOutline,
@@ -70,11 +77,14 @@ export class MainDashboard2Page implements OnInit {
       homeOutline,
       add
      })
+     console.log(this.key);
   }
 
   ngOnInit() {
     // Your initialization code here
   }
+
+
 
   addTasks(){
     this.tasks.push({});

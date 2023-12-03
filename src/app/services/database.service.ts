@@ -6,13 +6,13 @@ import { Storage } from '@ionic/storage-angular';
 @Injectable({
   providedIn: 'root'
 })
+
 export class DatabaseService {
   private _storage: Storage | null = null;
 
   constructor(private storage: Storage) {
     this._storage = storage;
-    this._storage.create();
-  
+    this.init();
   }
 
   async init(){
