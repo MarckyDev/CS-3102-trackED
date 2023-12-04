@@ -2,6 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+
+import { addIcons } from "ionicons";
+
+import { 
+  createOutline,
+  trashOutline,
+  checkmarkOutline,
+} from "ionicons/icons";
+
+
 import {
   IonToolbar,
   IonTextarea,
@@ -22,6 +32,9 @@ import {
   IonSearchbar,
   IonButton,
 } from '@ionic/angular/standalone';
+import { DatabaseService } from 'src/app/services/database.service';
+
+
 
 @Component({
   selector: 'app-notes',
@@ -55,6 +68,18 @@ import {
 })
 export class NotesPage implements OnInit {
   notes: any[] = [];
+  notes_title: any;
+  notes_body: any;
+
+  constructor(private database: DatabaseService){
+    addIcons({ 
+      createOutline,
+      trashOutline,
+      checkmarkOutline,
+     })
+
+     this.parseData();
+  }
 
   ngOnInit() {
     // Add an initial note
@@ -65,7 +90,7 @@ export class NotesPage implements OnInit {
     const newNoteNumber = this.notes.length + 1;
     const newNote = {
       title: `Notes ${newNoteNumber}`,
-      content: '',
+      body: '',
     };
     this.notes.push(newNote);
   }
@@ -86,5 +111,18 @@ export class NotesPage implements OnInit {
   saveNote(note: any) {
     // Implement save functionality
     console.log('Save Note:', note);
+  }
+
+  private async parseData(){
+    let parsedData = [];
+    
+    let obj = JSON.parse(await this.database.get('Users'));
+    parsedData.push(obj);
+
+    this.notes_title = obj.notes.title;
+    this.notes_body = obj.notes.body; 
+    this.notes = obj.notes;
+    console.log(this.notes_title);
+    console.log(this.notes_body);
   }
 }
