@@ -1,6 +1,3 @@
-/* notes.page.scss */
-
-/* Styles for ion-card-content */
 ion-card-content {
   font-size: 20px;
   text-align: justify;
@@ -22,18 +19,9 @@ ion-header ion-toolbar {
   padding: 0 16px;
 
   /* Styles for .search-and-fab-container */
-  .search-and-fab-container {
+  .fab-container {
     display: flex;
     align-items: center;
-
-    /* Styles for ion-searchbar */
-    ion-searchbar {
-      width: 100%;
-      max-width: 82%;
-      margin: 45px 0 0 0;
-      margin-left: 100px;
-      --background: #B9D3EC;
-    }
 
     /* Styles for ion-fab */
     ion-fab {
@@ -46,7 +34,7 @@ ion-header ion-toolbar {
 .notes-container {
   clear: both;
   width: 83%;
-  height: 300px;
+  height: 380px;
   margin: 40px auto 0;
   position: relative;
 
@@ -57,6 +45,7 @@ ion-header ion-toolbar {
     height: 50%;
     border: 2px solid #3880FF;
     margin-bottom: 20px;
+    overflow: visible;
 
     /* Styles for the notes card */
     &:hover {
@@ -66,28 +55,46 @@ ion-header ion-toolbar {
 
     /* Styles for ion-card-header */
     ion-card-header {
-      position: relative; /* Reset position */
-      height: 30px; /* Adjust height as needed */
-      margin-bottom: 8px; /* Add margin between title and content */
+      position: relative;
+      height: 30px;
+      margin-bottom: 8px;
     }
 
     /* Styles for ion-card-content */
     ion-card-content {
       font-size: 20px;
       text-align: justify;
+      margin-bottom: 10px;
     }
 
     /* Styles for buttons in horizontal line */
-    .horizontal-buttons {
+    ion-card-header .horizontal-buttons {
       position: absolute;
+      top: 130px;
       bottom: 8px;
       right: 8px;
       display: flex;
+      margin-bottom: 40px;
 
-      ion-button {
+      ion-fab-button {
         margin-left: 8px;
       }
     }
+  }
+
+  /* Styles for delete button */
+  ion-card ion-fab-button.delete-button {
+    --background: #2095F2;
+  }
+
+  /* Styles for edit button */
+  ion-card ion-fab-button.edit-button {
+    --background: #2095F2;
+  }
+
+  /* Styles for save button */
+  ion-card ion-fab-button.save-button {
+    --background: #2095F2;
   }
 }
 
