@@ -1,55 +1,89 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
+// Styling for the main container
 .container {
   display: flex;
+  flex-wrap: wrap;
 }
 
+// Styling for the main flex container
 .flex-box-container {
-  //Flex Container left
+  flex: 1;
+
+  // Styling for the left flex container
   .flex-container-left {
+    flex: 1;
     flex-direction: column;
     border: 1px blue dashed;
-    width: 750px;
-    height: 735px;
+    max-width: 750px;
+    width: 100%;
+    box-sizing: border-box;
 
-    //For Greetings
+    // Styling for the label section
     .label {
       margin-top: 30px;
+
+      // Styling for the h2 element inside label
       h2 {
         font-size: 30px;
         font-weight: bold;
         margin-left: 30px;
       }
     }
-    .ion-segment-container {
-       margin-left: 5px;
-       margin-right: 5px;
-    }
-    }
 
-  //Flex Container right
+    // Styling for the ion-segment container
+    .ion-segment-container {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
+
+  // Styling for the right flex container
   .flex-container-right {
-    align-self: center;
+    flex: 1;
+    align-self: flex-end; 
     flex-direction: column;
     border: 1px green dashed;
-    width: 400px;
-    height: 735px;
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+    transform: translateX(0);
+    transition: transform 0.5s ease-in-out;
 
-    .user-calendar{
-      margin-top: 25px;
-      margin-left: 10px;
-      h2{
-        font-size: 24px;
-        font-weight: 100;
-      }
-    }
-    .myCalendar{
-      margin-left: -5px;
-    }
-    .container2-reminders{
-      .header{
+    // Styling for the reminders container
+    .container2-reminders {
+      .header {
         margin-left: 10px;
       }
+    }
+  }
+
+  // Media query for smaller screens
+  @media (max-width: 768px) {
+    .swipe-in {
+      .flex-container-right {
+        transform: translateX(0);
+      }
+    }
+
+    // Margin for separation on smaller screens
+    .flex-container-left,
+    .flex-container-right {
+      margin-bottom: 20px;
+    }
+  }
+
+  // Additional media query for even smaller screens
+  @media (max-width: 768px) {
+    // Adjust maximum width for smaller screens
+    .flex-container-left,
+    .flex-container-right {
+      max-width: 100%;
+    }
+
+    // Additional mobile space styling
+    .additional-mobile-space {
+      margin-bottom: 20px;
     }
   }
 }
