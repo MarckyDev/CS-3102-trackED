@@ -30,7 +30,7 @@
         <ion-card>
           <ion-card-header>
             <!-- {{total_task_num}} -->
-            <h1>7</h1>
+            <h1>{{overall_tasks}}</h1>
           </ion-card-header>
           <ion-card-content class="task">
             Overall Tasks
@@ -41,7 +41,7 @@
         <ion-card>
           <ion-card-header>
           <!-- {{finished_task_num}}  -->
-          <h1>7</h1>
+          <h1>{{accomplished_tasks}}</h1>
           </ion-card-header>
           <ion-card-content class="task">
             Finished Tasks
@@ -58,9 +58,12 @@
             Add Task
           </ion-button>
         </div>
-          <ion-card>
+          <ion-card *ngFor="let task of tasks" [hidden]="tasks.length === 0">
+            <ion-card-header>
+              <ion-input [(ngModel)]="task.title" placeholder="Task Title"></ion-input>
+            </ion-card-header>
             <ion-card-content>
-              fakfhlasdfjasldkfjaskldf
+              <ion-textarea [(ngModel)]="task.body" placeholder="Enter your task here..."></ion-textarea>
             </ion-card-content>
           </ion-card>
       </div>

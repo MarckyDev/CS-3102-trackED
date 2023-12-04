@@ -71,7 +71,10 @@ export class MainDashboard2Page implements OnInit {
   last_name: any;
 
   current_tasks = this.tasks.length;
-  
+  accomplished_tasks = this.accomplished.length;
+  missed_tasks = this.missed.length;
+
+  overall_tasks = this.current_tasks + this.accomplished_tasks + this.missed_tasks;  
   
 
 
@@ -90,6 +93,7 @@ export class MainDashboard2Page implements OnInit {
 
   ngOnInit() {
     // Your initialization code here
+    this.addTask();
   }
 
 
@@ -101,10 +105,41 @@ export class MainDashboard2Page implements OnInit {
 
     this.first_name = obj.firstName;
     this.last_name = obj.lastName;   
+    this.tasks = obj.tasks;
+    
+    let accomplished = this.tasks.find(p => p.task.dueDate) 
+    //if current duedate ng task is equals to the current iondatetime value && yung completed is false then push sa current_tasks array
+    //if current duedate ng task is more than the current iondatetime value && yung completed is false then push sa missed array
+    //if yung current duedate ng task is less than sa current iondatetime value && yung completed is true then push sa accomplished array
   }
 
-  addTasks(){
-    this.tasks.push({});
+  addTask() {
+    const newTaskNumber = this.tasks.length + 1;
+    const newTask = {
+      title: `Tasks ${newTaskNumber}`,
+      body: '',
+      dueDate:'',
+      completed:'',
+    };
+    this.tasks.push(newTask);
+  }
+
+  editTask(task: any) {
+    // Implement edit functionality
+    console.log('Edit Task:', task);
+  }
+
+  deleteTask(task: any) {
+    // Implement delete functionality
+    const index = this.tasks.indexOf(task);
+    if (index !== -1) {
+      this.tasks.splice(index, 1);
+    }
+  }
+
+  saveTask(task: any) {
+    // Implement save functionality
+    console.log('Save Task:', task);
   }
 
  
