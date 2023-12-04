@@ -116,22 +116,22 @@ export class MainDashboard2Page implements OnInit {
     this.tasks.push(newTask);
   }
 
-  editTask(note: any) {
+  editTask(task: any) {
     // Implement edit functionality
-    console.log('Edit Task:', note);
+    console.log('Edit Task:', task);
   }
 
-  deleteTask(note: any) {
+  deleteTask(task: any) {
     // Implement delete functionality
-    const index = this.tasks.indexOf(note);
+    const index = this.tasks.indexOf(task);
     if (index !== -1) {
       this.tasks.splice(index, 1);
     }
   }
 
-  saveTask(note: any) {
+  saveTask(task: any) {
     // Implement save functionality
-    console.log('Save Task:', note);
+    console.log('Save Task:', task);
   }
 
  
