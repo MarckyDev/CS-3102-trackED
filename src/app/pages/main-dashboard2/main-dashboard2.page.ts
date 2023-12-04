@@ -65,8 +65,13 @@ import { DatabaseService } from 'src/app/services/database.service';
 })
 export class MainDashboard2Page implements OnInit {
   tasks: any[] = [];
-  key = this.database.get('Users');
- 
+  items: any[] = [];
+  first_name: any;
+  last_name: any;
+
+  current_tasks = this.tasks.length;
+  
+  
 
 
   constructor(private database: DatabaseService) {
@@ -76,8 +81,10 @@ export class MainDashboard2Page implements OnInit {
       notificationsOutline,
       homeOutline,
       add
-     })
-     console.log(this.key);
+     });
+
+     this.parseData();
+
   }
 
   ngOnInit() {
@@ -85,6 +92,17 @@ export class MainDashboard2Page implements OnInit {
   }
 
 
+  private async parseData(){
+    let parsedData = [];
+    
+    let obj = JSON.parse(await this.database.get('Users'));
+    parsedData.push(obj);
+
+    this.first_name = obj.firstName;
+    this.last_name = obj.lastName;
+
+    
+  }
 
   addTasks(){
     this.tasks.push({});

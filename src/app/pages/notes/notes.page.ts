@@ -32,6 +32,9 @@ import {
   IonSearchbar,
   IonButton,
 } from '@ionic/angular/standalone';
+import { DatabaseService } from 'src/app/services/database.service';
+
+
 
 @Component({
   selector: 'app-notes',
@@ -66,12 +69,14 @@ import {
 export class NotesPage implements OnInit {
   notes: any[] = [];
 
-  constructor(){
+  constructor(private database: DatabaseService){
     addIcons({ 
       createOutline,
       trashOutline,
       checkmarkOutline,
      })
+
+     this.parseData();
   }
 
   ngOnInit() {
@@ -104,5 +109,10 @@ export class NotesPage implements OnInit {
   saveNote(note: any) {
     // Implement save functionality
     console.log('Save Note:', note);
+  }
+
+  async parseData(){
+    let notes = this.database.getNotes();
+    console.log(notes);
   }
 }

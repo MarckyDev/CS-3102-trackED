@@ -36,7 +36,6 @@ import { Router } from '@angular/router';
 })
 export class SignupPage implements OnInit{
 
-  user:String;
   @ViewChild('firstName') firstName!: IonInput;
   @ViewChild('lastName') lastName!: IonInput;
   @ViewChild('email') email!: IonInput;
@@ -65,20 +64,29 @@ export class SignupPage implements OnInit{
     const e_mail = await this.databaseService.getInputValue(this.email);
     const passkey = await this.databaseService.getInputValue(this.password);
 
-    let note = {title:String, body:String};
-    let task = {title:String, body:String, dueDate:String, completed:Boolean};
+    type note = {title:string, body:string};
+    type task = {title:string, body:string, dueDate:string, completed:boolean};
 
     let user = {
       firstName: first_name.toString(),
       lastName:last_name.toString(),
       email:e_mail.toString(),
       password:passkey.toString(),
-      notes:[note],
-      tasks:[task]
+      notes:[],
+      tasks:[]
     }
+
+    user.notes.push({title: 'Today I ate my favorite food', body: 'So I was like eating this fave food called Papaya Galore, it was so yummy!'});
+    user.notes.push({title: 'Dear Diary', body:'I am constipated :('});
+
+    user.tasks.push({title:'Math homework', body:'Do quadratic equations assignment', dueDate:'2023-02-19', completed:'false'});
+    user.tasks.push({title:'Science homework', body:'Memorize Kreb\'s cycle', dueDate:'2023-12-3', completed:'true'});
+    user.tasks.push({title:'Implement Notifications', body:'Implement the notifications function for my task app', dueDate:'2023-12-25', completed:'false'});
+
     
    
     this.databaseService.set('Users', JSON.stringify(user));
+    this.navigate('/login');
   }
 
 

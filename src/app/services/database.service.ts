@@ -50,5 +50,15 @@ export class DatabaseService {
     return inputElement.value || '';
   }
 
+  public async getNotes(){
+    let parsedData = JSON.parse(await this.get('Users'));
+    let list = [];
+    list.push(parsedData);
+    let notes = [];
+    notes.push(parsedData.notes);
+
+    return notes
+  }
+
 
 }

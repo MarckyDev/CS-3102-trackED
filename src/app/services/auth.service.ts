@@ -11,8 +11,8 @@ export class AuthService {
   async authUser(user:any){
     let UserArray = [];
     if(await this.storage.get('Users')){
-      UserArray = JSON.parse(await this.storage.get('Users'));
+      UserArray.push(JSON.parse(await this.storage.get('Users')));
     }
-    return UserArray.find(p => p.email === user.email && p.passkey === user.password)
+    return UserArray.find(p => p.email === user.email && p.password === user.password);
   }
 }

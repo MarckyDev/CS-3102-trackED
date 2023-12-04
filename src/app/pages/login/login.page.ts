@@ -15,7 +15,7 @@ import {IonContent,
 
 import { DatabaseService } from 'src/app/services/database.service';
 import { AuthService } from 'src/app/services/auth.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -40,16 +40,17 @@ export class LoginPage{
   @ViewChild('inputPassword') inputPassword!: IonInput;
   @ViewChild('inputUser') inputUser!: IonInput;
 
-  constructor(private databaseService: DatabaseService, private auth:AuthService) { }
+  constructor(private databaseService: DatabaseService, private auth:AuthService, private router:Router) { }
 
   async onLogin() {
     const username = await this.databaseService.getInputValue(this.inputUser);
     const passcode = await this.databaseService.getInputValue(this.inputPassword);
 
-    const user = this.auth.authUser([username, passcode]);
+    const user = this.auth.authUser([{email:username, password:passcode}]);
 
     if(user){
-      console.log('login Successful')
+      console.log('login Successful');
+      this.navigate('/main-dashboard2');
     }else{
       console.log('login not successful')
     }
@@ -59,7 +60,9 @@ export class LoginPage{
     this.databaseService.clearStorage();
   }
 
-  
+  navigate(url: string){
+    this.router.navigateByUrl(url);
+  }
 
 
 }
