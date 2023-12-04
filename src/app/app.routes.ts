@@ -31,7 +31,16 @@ export const routes: Routes = [
 
     ]
   },  //DO NOT CHANGE!
-  
+  { //pupunta muna shang login kapag wala pang account
+    path: '',
+    redirectTo: 'signup', //PWEDE TO PALITAN PERO PLS PAKIBALIK SA login, to see the side-menu please type in here main-dashboard2
+    pathMatch: 'full',
+  },
+  { //pupunta muna shang login kapag wala pang account
+    path: '',
+    redirectTo: 'login', //PWEDE TO PALITAN PERO PLS PAKIBALIK SA login, to see the side-menu please type in here main-dashboard2
+    pathMatch: 'full',
+  },
   
   {
     path: 'signup',

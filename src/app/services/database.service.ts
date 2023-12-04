@@ -6,13 +6,13 @@ import { Storage } from '@ionic/storage-angular';
 @Injectable({
   providedIn: 'root'
 })
+
 export class DatabaseService {
   private _storage: Storage | null = null;
 
   constructor(private storage: Storage) {
     this._storage = storage;
-    this._storage.create();
-  
+    this.init();
   }
 
   async init(){
@@ -48,6 +48,16 @@ export class DatabaseService {
   public async getInputValue(input: IonInput): Promise<string> {
     const inputElement = await input.getInputElement();
     return inputElement.value || '';
+  }
+
+  public async getNotes(){
+    let parsedData = JSON.parse(await this.get('Users'));
+    let list = [];
+    list.push(parsedData);
+    let notes = [];
+    notes.push(parsedData.notes);
+
+    return notes
   }
 
 

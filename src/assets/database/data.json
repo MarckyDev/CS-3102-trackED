@@ -1,0 +1,23 @@
+{
+    "email":[
+        {
+            "firstName":"",
+            "lastName":"",
+            "password": "",
+            "notes":[
+                {
+                    "title":"",
+                    "body":""
+                }
+            ],
+            "tasks":[
+                {
+                    "title":"",
+                    "body":"",
+                    "dueDate":"",
+                    "completed":false
+                }
+            ]
+        }
+    ]
+}

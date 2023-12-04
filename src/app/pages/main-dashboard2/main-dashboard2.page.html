@@ -10,8 +10,8 @@
                 container">
       <!--Okay na to-->
       <div class="greeting">
-        <p>Hello, firstname</p>
-        <h2>You've got + current tasks + tasks today</h2>
+        <p>Hello, {{first_name}}</p>
+        <h2>You've got {{current_tasks}} tasks today</h2>
       </div>
 
       <div class="tasks-number-container 
@@ -19,8 +19,7 @@
       ion-justify-content-evenly">
         <ion-card>
           <ion-card-header>
-            <!-- {{task_num}} -->
-            <h1>7</h1>
+            <h1>{{current_tasks}}</h1>
           </ion-card-header>
           <ion-card-content class="task">
             Current Tasks
@@ -72,7 +71,7 @@
     container">
 
       <div class="user-calendar">
-        <h2>Firstname + Lastname's Dashboard</h2>
+        <h2>{{first_name}} {{last_name}}'s Dashboard</h2>
         <div class="myCalendar">
           <ion-datetime></ion-datetime> <!-- Calendar  -->
         </div>
