@@ -1,33 +1,54 @@
 ion-content {
-    text-align: center;
-    display: flex;
-    align-items: center;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
 
-  }
-  ion-card {
-    display: inline-block; /* This is necessary to center the card */
-    text-align: left; /* Reset text alignment for card content */
-    width: 120%;
-    max-width: 500px;
-    height: 700px;
-  }
-  
+ion-card {
+  display: inline-block; 
+  text-align: left; 
+  width: 100%;
+  max-width: 500px;
+  height: 700px;
+
   ion-card-header {
     text-align: center;
   }
-  
+
   ion-card-title {
     font-weight: bold;
   }
-  
+}
+
+.gender-group {
+  ul {
+    list-style-type: none;
+    display: inline;
+  }
+
+  li {
+    display: inline;
+  }
+}
+
+/* Media query for small screens */
+@media (max-width: 600px) {
+  ion-card {
+    height: auto; 
+    font-size: 0.8rem; 
+    padding: 10px; 
+    width: 90%; 
+    max-width: 400px; 
+    margin-top: 50px; 
+  }
+
+  ion-card-title {
+    font-size: 1.2rem;
+  }
+
   .gender-group {
     ul {
-      list-style-type: none;
-      display: inline;
-    }
-  
-    li {
-      display: inline;
+      font-size: 0.6rem; 
     }
   }
-  
+}
