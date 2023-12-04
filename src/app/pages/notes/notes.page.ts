@@ -68,6 +68,8 @@ import { DatabaseService } from 'src/app/services/database.service';
 })
 export class NotesPage implements OnInit {
   notes: any[] = [];
+  notes_title: any;
+  notes_body: any;
 
   constructor(private database: DatabaseService){
     addIcons({ 
@@ -88,7 +90,7 @@ export class NotesPage implements OnInit {
     const newNoteNumber = this.notes.length + 1;
     const newNote = {
       title: `Notes ${newNoteNumber}`,
-      content: '',
+      body: '',
     };
     this.notes.push(newNote);
   }
@@ -111,8 +113,16 @@ export class NotesPage implements OnInit {
     console.log('Save Note:', note);
   }
 
-  async parseData(){
-    let notes = this.database.getNotes();
-    console.log(notes);
+  private async parseData(){
+    let parsedData = [];
+    
+    let obj = JSON.parse(await this.database.get('Users'));
+    parsedData.push(obj);
+
+    this.notes_title = obj.notes.title;
+    this.notes_body = obj.notes.body; 
+    this.notes = obj.notes;
+    console.log(this.notes_title);
+    console.log(this.notes_body);
   }
 }

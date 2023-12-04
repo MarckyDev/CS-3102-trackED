@@ -65,7 +65,8 @@ import { DatabaseService } from 'src/app/services/database.service';
 })
 export class MainDashboard2Page implements OnInit {
   tasks: any[] = [];
-  items: any[] = [];
+  accomplished: any[] = [];
+  missed: any[] = [];
   first_name: any;
   last_name: any;
 
@@ -99,9 +100,7 @@ export class MainDashboard2Page implements OnInit {
     parsedData.push(obj);
 
     this.first_name = obj.firstName;
-    this.last_name = obj.lastName;
-
-    
+    this.last_name = obj.lastName;   
   }
 
   addTasks(){

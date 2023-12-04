@@ -104,3 +104,35 @@
     }
   }
 }
+
+
+// Media queries for responsiveness
+@media only screen and (min-width: 400px) {
+  .flex-container-1 {
+    flex-direction: row;
+  }
+
+  .flex-container-2 {
+    margin-left: 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .flex-container-1 {
+    width: 60%;
+  }
+
+  .flex-container-2 {
+    width: 40%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .flex-container-1 {
+    width: 70%;
+  }
+
+  .flex-container-2 {
+    width: 30%;
+  }
+}
