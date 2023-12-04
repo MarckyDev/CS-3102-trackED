@@ -90,6 +90,7 @@ export class MainDashboard2Page implements OnInit {
 
   ngOnInit() {
     // Your initialization code here
+    this.addTask();
   }
 
 
@@ -101,10 +102,36 @@ export class MainDashboard2Page implements OnInit {
 
     this.first_name = obj.firstName;
     this.last_name = obj.lastName;   
+    this.tasks = obj.tasks;
   }
 
-  addTasks(){
-    this.tasks.push({});
+  addTask() {
+    const newTaskNumber = this.tasks.length + 1;
+    const newTask = {
+      title: `Tasks ${newTaskNumber}`,
+      body: '',
+      dueDate:'',
+      completed:'',
+    };
+    this.tasks.push(newTask);
+  }
+
+  editTask(note: any) {
+    // Implement edit functionality
+    console.log('Edit Task:', note);
+  }
+
+  deleteTask(note: any) {
+    // Implement delete functionality
+    const index = this.tasks.indexOf(note);
+    if (index !== -1) {
+      this.tasks.splice(index, 1);
+    }
+  }
+
+  saveTask(note: any) {
+    // Implement save functionality
+    console.log('Save Task:', note);
   }
 
  

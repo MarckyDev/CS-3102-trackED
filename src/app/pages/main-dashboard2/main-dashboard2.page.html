@@ -59,8 +59,11 @@
           </ion-button>
         </div>
           <ion-card>
+            <ion-card-header>
+              <ion-input [(ngModel)]="task.title" placeholder="Task Title"></ion-input>
+            </ion-card-header>
             <ion-card-content>
-              fakfhlasdfjasldkfjaskldf
+              <ion-textarea [(ngModel)]="task.body" placeholder="Enter your task here..."></ion-textarea>
             </ion-card-content>
           </ion-card>
       </div>

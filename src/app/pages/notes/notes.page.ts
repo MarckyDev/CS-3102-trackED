@@ -68,8 +68,7 @@ import { DatabaseService } from 'src/app/services/database.service';
 })
 export class NotesPage implements OnInit {
   notes: any[] = [];
-  notes_title: any;
-  notes_body: any;
+
 
   constructor(private database: DatabaseService){
     addIcons({ 
@@ -119,10 +118,7 @@ export class NotesPage implements OnInit {
     let obj = JSON.parse(await this.database.get('Users'));
     parsedData.push(obj);
 
-    this.notes_title = obj.notes.title;
-    this.notes_body = obj.notes.body; 
     this.notes = obj.notes;
-    console.log(this.notes_title);
-    console.log(this.notes_body);
+
   }
 }
