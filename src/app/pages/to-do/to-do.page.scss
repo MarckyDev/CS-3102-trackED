@@ -14,7 +14,6 @@
   .flex-container-left {
     flex: 1;
     flex-direction: column;
-    border: 1px blue dashed;
     max-width: 750px;
     width: 100%;
     box-sizing: border-box;
@@ -43,7 +42,6 @@
     flex: 1;
     align-self: flex-end; 
     flex-direction: column;
-    border: 1px green dashed;
     max-width: 400px;
     width: 100%;
     box-sizing: border-box;

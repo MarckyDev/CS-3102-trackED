@@ -13,11 +13,8 @@ import {
 
 } from "ionicons/icons";
 import {
-  IonToolbar,
-  IonAccordion,
   IonItem,
   IonLabel,
-  IonAccordionGroup,
   IonCard,
   IonCardContent,
   IonCardHeader,
@@ -28,11 +25,6 @@ import {
   IonFabButton,
   IonIcon,
   IonButton,
-  IonTabBar,
-  IonTabs,
-  IonTabButton,
-  IonSplitPane,
-  IonRouterOutlet,
   
 } from '@ionic/angular/standalone';
 
@@ -64,13 +56,14 @@ import { DatabaseService } from 'src/app/services/database.service';
   ]
 })
 export class MainDashboard2Page implements OnInit {
-  tasks: any[] = [];
+  current: any[] = [];
   accomplished: any[] = [];
   missed: any[] = [];
   first_name: any;
   last_name: any;
+  calendar_value:any;
 
-  current_tasks = this.tasks.length;
+  current_tasks = this.current.length;
   accomplished_tasks = this.accomplished.length;
   missed_tasks = this.missed.length;
 
@@ -86,8 +79,12 @@ export class MainDashboard2Page implements OnInit {
       homeOutline,
       add
      });
-
      this.parseData();
+     this.calendar_value = new Date().toISOString().split('T', 1).pop().toString(); //outputs date today
+     console.log(this.calendar_value);
+
+     
+     
 
   }
 
@@ -105,23 +102,30 @@ export class MainDashboard2Page implements OnInit {
 
     this.first_name = obj.firstName;
     this.last_name = obj.lastName;   
-    this.tasks = obj.tasks;
-    
-    let accomplished = this.tasks.find(p => p.task.dueDate) 
-    //if current duedate ng task is equals to the current iondatetime value && yung completed is false then push sa current_tasks array
-    //if current duedate ng task is more than the current iondatetime value && yung completed is false then push sa missed array
-    //if yung current duedate ng task is less than sa current iondatetime value && yung completed is true then push sa accomplished array
+    this.current = obj.tasks;
   }
 
+   /*
+    let current = parsedData.find(p => p.tasks.dueDate <= this.calendar_value && p.tasks.completed == 'false'); //if current duedate ng task is equals to the current iondatetime value && yung completed is false then push sa current_tasks array
+    let missed = parsedData.find(p => p.tasks.dueDate >= this.calendar_value && p.tasks.completed == 'false'); //if current duedate ng task is more than the current iondatetime value && yung completed is false then push sa missed array
+    let accomplished = parsedData.find(p => p.tasks.completed == 'true'); //if yung completed is true then push sa accomplished array
+    if(current){
+      this.tasks.push(current);
+    }else if(missed){
+      this.missed.push(missed);
+    }else{
+      this.accomplished.push(accomplished);
+    }*/
+
   addTask() {
-    const newTaskNumber = this.tasks.length + 1;
+    const newTaskNumber = this.current.length + 1;
     const newTask = {
       title: `Tasks ${newTaskNumber}`,
       body: '',
       dueDate:'',
       completed:'',
     };
-    this.tasks.push(newTask);
+    this.current.push(newTask);
   }
 
   editTask(task: any) {
@@ -131,9 +135,9 @@ export class MainDashboard2Page implements OnInit {
 
   deleteTask(task: any) {
     // Implement delete functionality
-    const index = this.tasks.indexOf(task);
+    const index = this.current.indexOf(task);
     if (index !== -1) {
-      this.tasks.splice(index, 1);
+      this.current.splice(index, 1);
     }
   }
 

@@ -53,19 +53,23 @@
       <div class="container1-tasks">
         <div class="header">
           <h2>Today's Tasks</h2>
-          <ion-button>
+          <ion-button (click)="addTask();">
             <ion-icon name="add" slot="start"></ion-icon>
             Add Task
           </ion-button>
         </div>
-          <ion-card *ngFor="let task of tasks" [hidden]="tasks.length === 0">
+        <div class="task_cont">
+          <ion-card *ngFor="let task of current" [hidden]="current.length === 0">
             <ion-card-header>
               <ion-input [(ngModel)]="task.title" placeholder="Task Title"></ion-input>
+              <!--ion-card-subtitle [(ngModel)]="task.dueDate" placeholder="Due Date"></ion-card-subtitle-->
             </ion-card-header>
             <ion-card-content>
               <ion-textarea [(ngModel)]="task.body" placeholder="Enter your task here..."></ion-textarea>
             </ion-card-content>
           </ion-card>
+        </div>
+
       </div>
       
     </div>
@@ -76,7 +80,7 @@
       <div class="user-calendar">
         <h2>{{first_name}} {{last_name}}'s Dashboard</h2>
         <div class="myCalendar">
-          <ion-datetime></ion-datetime> <!-- Calendar  -->
+          <ion-datetime value="calendar_value" presentation="date"></ion-datetime> <!-- Calendar  -->
         </div>
       </div>
 

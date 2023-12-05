@@ -8,7 +8,6 @@
   //Flex Container 1
   .flex-container-1 {
     flex-direction: column;
-    border: 1px blue dashed;
     width: 750px;
     height: 735px;
 
@@ -54,12 +53,20 @@
         left: 0;
         right: 0;
       }
+
+      h1{
+        font-size: 480%;
+        color: white;
+        margin-top: 5px;
+        margin-bottom: 10px;
+      }
     }
 
     .container1-tasks{
       margin-top: 40px;
       margin-left: 30px;
       margin-right: 30px;
+      overflow: hidden;
 
       .header{
         display: flex;
@@ -75,6 +82,11 @@
           border-radius: 10px;
         }
         }
+
+        .task_cont {
+          height: 100vh;
+          overflow-y: scroll;
+        }
       }
     }
 
@@ -82,7 +94,6 @@
   .flex-container-2 {
     align-self: center;
     flex-direction: column;
-    border: 1px green dashed;
     width: 400px;
     height: 735px;
 

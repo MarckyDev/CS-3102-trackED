@@ -5,7 +5,7 @@
         <div class="flex-container-left
                     container">
             <div class="label">
-                <h2>TO DO</h2>
+                <h2>{{first_name}} {{last_name}}'s TO DO</h2>
             </div>
             <div class="ion-segment-container 
                         container
@@ -21,12 +21,14 @@
                         <ion-label>Missed</ion-label>
                     </ion-segment-button>
                 </ion-segment>
+            </div>
+            <div class="to-do-container">
+              <div *ngFor = "let todo of todos" [class]="todo.status == 'ongoing' ? 'onGoing'""> <!-- IDK KUNG ANOT ITUU AHSAHSAY -->
             </div>   
         </div> 
         
         <div class="flex-container-right
                     container">
-
       <div class="container2-reminders"> <!-- REMINDER CONTAINER  -->
         <div class="header">
           <h5>Reminders</h5>

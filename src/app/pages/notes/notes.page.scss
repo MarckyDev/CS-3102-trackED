@@ -46,10 +46,11 @@ ion-header ion-toolbar {
     border: 2px solid #3880FF;
     margin-bottom: 20px;
     overflow: visible;
+    transition: transform 0.3s ease-in-out;
 
     /* Styles for the notes card */
     &:hover {
-      transform: scale(1.1);
+      transform: scale(1.02);
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
 
@@ -113,7 +114,6 @@ ion-fab ion-fab-button {
   height: 45px;
   margin-top: 25px;
   margin-right: 40px;
-  --box-shadow: none;
   z-index: 2;
 
   ion-icon {
