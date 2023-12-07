@@ -22,6 +22,11 @@
           <ion-icon name="clipboard-outline" slot="start"></ion-icon>
           Notes
         </ion-item>
+
+        <ion-item button="true" (click)="navigate('/login')" routerDirection="root" routerLinkActive="active-link">
+          <ion-icon name="log-out-outline" slot="start"></ion-icon>
+          Logout
+        </ion-item>
       </ion-list> 
     </ion-content>     
   </ion-menu>

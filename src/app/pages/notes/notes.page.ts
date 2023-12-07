@@ -68,7 +68,7 @@ import { DatabaseService } from 'src/app/services/database.service';
 })
 export class NotesPage implements OnInit {
   notes: any[] = [];
-
+  isEditable:boolean = false;
 
   constructor(private database: DatabaseService){
     addIcons({ 
@@ -96,7 +96,10 @@ export class NotesPage implements OnInit {
 
   editNote(note: any) {
     // Implement edit functionality
-    console.log('Edit Note:', note);
+    if(this.isEditable){
+      this.isEditable = false; //allows note editing
+      console.log('Edit Note:', note);
+    }
   }
 
   deleteNote(note: any) {
@@ -109,7 +112,10 @@ export class NotesPage implements OnInit {
 
   saveNote(note: any) {
     // Implement save functionality
-    console.log('Save Note:', note);
+    if(!this.isEditable){
+      this.isEditable = true; //doesn't allow note editing
+      console.log('Save Note:', note);
+    }
   }
 
   private async parseData(){

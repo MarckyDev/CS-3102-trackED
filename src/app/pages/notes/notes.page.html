@@ -13,10 +13,10 @@
             <ion-icon name="checkmark-outline"></ion-icon>
           </ion-fab-button>
         </div>
-        <ion-input [(ngModel)]="note.title" placeholder="Note Title"></ion-input>
+        <ion-input [readonly]="isEditable" [(ngModel)]="note.title" placeholder="Note Title"></ion-input>
       </ion-card-header>
       <ion-card-content>
-        <ion-textarea [(ngModel)]="note.body" placeholder="Enter your note here..."></ion-textarea>
+        <ion-textarea [readonly]="isEditable" [(ngModel)]="note.body" placeholder="Enter your note here..."></ion-textarea>
       </ion-card-content>
     </ion-card>
   </div>

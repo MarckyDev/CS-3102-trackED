@@ -65,7 +65,7 @@ export class SignupPage implements OnInit{
     const passkey = await this.databaseService.getInputValue(this.password);
 
     type note = {title:string, body:string};
-    type task = {title:string, body:string, dueDate:string, completed:boolean};
+    type task = {title:string, body:string, dueDate:string, status:string};
 
     let user = {
       firstName: first_name.toString(),
@@ -79,9 +79,9 @@ export class SignupPage implements OnInit{
     user.notes.push({title: 'Today I ate my favorite food', body: 'So I was like eating this fave food called Papaya Galore, it was so yummy!'});
     user.notes.push({title: 'Dear Diary', body:'I am constipated :('});
 
-    user.tasks.push({title:'Math homework', body:'Do quadratic equations assignment', dueDate:'2023-02-19', completed:'false'});
-    user.tasks.push({title:'Science homework', body:'Memorize Kreb\'s cycle', dueDate:'2023-12-3', completed:'true'});
-    user.tasks.push({title:'Implement Notifications', body:'Implement the notifications function for my task app', dueDate:'2023-12-25', completed:'false'});
+    user.tasks.push({title:'Math homework', body:'Do quadratic equations assignment', dueDate:'2023-02-19', status:'missed'});
+    user.tasks.push({title:'Science homework', body:'Memorize Kreb\'s cycle', dueDate:'2023-12-3', status:'done'});
+    user.tasks.push({title:'Implement Notifications', body:'Implement the notifications function for my task app', dueDate:'2023-12-25', status:'ongoing'});
 
     
    

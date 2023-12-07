@@ -34,27 +34,10 @@
     .ion-segment-container {
       margin-left: 5px;
       margin-right: 5px;
-    }
+      border: 2px solid #255ec0;
+ 
   }
-
-  // Styling for the right flex container
-  .flex-container-right {
-    flex: 1;
-    align-self: flex-end; 
-    flex-direction: column;
-    max-width: 400px;
-    width: 100%;
-    box-sizing: border-box;
-    transform: translateX(0);
-    transition: transform 0.5s ease-in-out;
-
-    // Styling for the reminders container
-    .container2-reminders {
-      .header {
-        margin-left: 10px;
-      }
-    }
-  }
+}
 
   // Media query for smaller screens
   @media (max-width: 768px) {
@@ -65,8 +48,7 @@
     }
 
     // Margin for separation on smaller screens
-    .flex-container-left,
-    .flex-container-right {
+    .flex-container-left{
       margin-bottom: 20px;
     }
   }
@@ -74,8 +56,7 @@
   // Additional media query for even smaller screens
   @media (max-width: 768px) {
     // Adjust maximum width for smaller screens
-    .flex-container-left,
-    .flex-container-right {
+    .flex-container-left {
       max-width: 100%;
     }
 
@@ -83,5 +64,34 @@
     .additional-mobile-space {
       margin-bottom: 20px;
     }
+  }
+}
+
+ion-card {
+  position: relative;
+  border: 2px solid #3880FF;
+  margin-bottom: 20px;
+  overflow: visible;
+  transition: transform 0.3s ease-in-out;
+
+  /* Styles for the notes card */
+  &:hover {
+    transform: scale(1.02);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  /* Styles for ion-card-header */
+  ion-card-header {
+    position: relative;
+    height: 30px;
+    margin-bottom: 8px;
+    font-size: 1.4em;
+  }
+
+  /* Styles for ion-card-content */
+  ion-card-content {
+    font-size: 1.9em;
+    text-align: justify;
+    margin-bottom: 10px;
   }
 }

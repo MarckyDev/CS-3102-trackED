@@ -10,6 +10,7 @@ import {
   checkmarkCircleOutline,
   notificationsOutline,
   homeOutline,
+  logOutOutline
 
 } from "ionicons/icons";
 
@@ -63,7 +64,8 @@ export class SideMenuPage{
       clipboardOutline,
       checkmarkCircleOutline,
       notificationsOutline,
-      homeOutline
+      homeOutline,
+      logOutOutline
      })
   }
 

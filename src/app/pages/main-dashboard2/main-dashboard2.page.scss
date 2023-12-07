@@ -66,7 +66,7 @@
       margin-top: 40px;
       margin-left: 30px;
       margin-right: 30px;
-      overflow: hidden;
+      overflow: hidden  ;
 
       .header{
         display: flex;
@@ -82,10 +82,55 @@
           border-radius: 10px;
         }
         }
-
+        
         .task_cont {
-          height: 100vh;
-          overflow-y: scroll;
+          height: 40vh;
+          overflow-y: auto;
+
+          ion-card {
+            position: relative;
+            border: 2px solid #3880FF;
+            margin-bottom: 20px;
+            overflow: visible;
+            transition: transform 0.3s ease-in-out;
+        
+            /* Styles for the notes card */
+            &:hover {
+              transform: scale(1.02);
+              clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+        
+            /* Styles for ion-card-header */
+            ion-card-header {
+              position: relative;
+              height: 30px;
+              margin-bottom: 8px;
+              font-size: 1.4em;
+            }
+        
+            /* Styles for ion-card-content */
+            ion-card-content {
+              font-size: 0.9em;
+              text-align: justify;
+              margin-bottom: 10px;
+            }
+        
+            /* Styles for buttons in horizontal line */
+            ion-card-header .horizontal-buttons {
+              position: absolute;
+              top: 80px;
+              bottom: 4px;
+              right: 8px;
+              display: flex;
+              margin-bottom: 40px;
+        
+              ion-fab-button {
+                margin-left: 8px;
+                background: none;
+              }
+            }
+          }
+
         }
       }
     }
@@ -117,33 +162,41 @@
 }
 
 
-// Media queries for responsiveness
-@media only screen and (min-width: 400px) {
-  .flex-container-1 {
-    flex-direction: row;
-  }
+/* Media queries for responsiveness */
+@media only screen and (max-width: 767px) {
+  .flex-box-container {
+    flex-direction: column;
 
-  .flex-container-2 {
-    margin-left: 20px;
-  }
-}
+    .flex-container-1,
+    .flex-container-2 {
+      width: 100%;
+    }
 
-@media only screen and (min-width: 768px) {
-  .flex-container-1 {
-    width: 60%;
-  }
+    .flex-container-2 {
+      margin-top: 20px; /* Adjust as needed */
+    }
 
-  .flex-container-2 {
-    width: 40%;
-  }
-}
+    /* Adjust font sizes for small screens */
+    .greeting p {
+      font-size: 18px;
+      margin-left: 15px;
+    }
 
-@media only screen and (min-width: 992px) {
-  .flex-container-1 {
-    width: 70%;
-  }
+    .greeting h2 {
+      font-size: 24px;
+      margin-left: 15px;
+    }
 
-  .flex-container-2 {
-    width: 30%;
+    .tasks-number-container ion-card-content {
+      font-size: 18px;
+    }
+
+    .container1-tasks .header ion-button {
+      font-size: 16px;
+    }
+
+    .user-calendar h2 {
+      font-size: 18px;
+    }
   }
 }

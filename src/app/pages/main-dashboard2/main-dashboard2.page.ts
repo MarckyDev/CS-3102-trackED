@@ -5,13 +5,11 @@ import { IonicModule } from '@ionic/angular';
 import { addIcons } from "ionicons";
 
 import { 
-  clipboardOutline,
-  checkmarkCircleOutline,
-  notificationsOutline,
-  homeOutline,
-  add
-
+  createOutline,
+  trashOutline,
+  checkmarkOutline,
 } from "ionicons/icons";
+
 import {
   IonItem,
   IonLabel,
@@ -61,35 +59,27 @@ export class MainDashboard2Page implements OnInit {
   missed: any[] = [];
   first_name: any;
   last_name: any;
-  calendar_value:any;
 
-  current_tasks = this.current.length;
-  accomplished_tasks = this.accomplished.length;
-  missed_tasks = this.missed.length;
+  current_tasks:number = 0;
+  accomplished_tasks:number = 0;
+  missed_tasks:number = 0;
 
-  overall_tasks = this.current_tasks + this.accomplished_tasks + this.missed_tasks;  
+  overall_tasks:number = 0;  
   
-
+  isEditable:boolean = false;
 
   constructor(private database: DatabaseService) {
     addIcons({ 
-      clipboardOutline,
-      checkmarkCircleOutline,
-      notificationsOutline,
-      homeOutline,
-      add
-     });
-     this.parseData();
-     this.calendar_value = new Date().toISOString().split('T', 1).pop().toString(); //outputs date today
-     console.log(this.calendar_value);
-
-     
-     
+      createOutline,
+      trashOutline,
+      checkmarkOutline,
+     });   
 
   }
 
   ngOnInit() {
     // Your initialization code here
+    this.parseData();
     this.addTask();
   }
 
@@ -103,19 +93,12 @@ export class MainDashboard2Page implements OnInit {
     this.first_name = obj.firstName;
     this.last_name = obj.lastName;   
     this.current = obj.tasks;
-  }
 
-   /*
-    let current = parsedData.find(p => p.tasks.dueDate <= this.calendar_value && p.tasks.completed == 'false'); //if current duedate ng task is equals to the current iondatetime value && yung completed is false then push sa current_tasks array
-    let missed = parsedData.find(p => p.tasks.dueDate >= this.calendar_value && p.tasks.completed == 'false'); //if current duedate ng task is more than the current iondatetime value && yung completed is false then push sa missed array
-    let accomplished = parsedData.find(p => p.tasks.completed == 'true'); //if yung completed is true then push sa accomplished array
-    if(current){
-      this.tasks.push(current);
-    }else if(missed){
-      this.missed.push(missed);
-    }else{
-      this.accomplished.push(accomplished);
-    }*/
+    this.current_tasks = this.current.length;
+    this.accomplished_tasks = this.accomplished.length;
+    this.missed_tasks = this.missed.length;
+    this.updateOverallTasks();
+  }
 
   addTask() {
     const newTaskNumber = this.current.length + 1;
@@ -123,14 +106,21 @@ export class MainDashboard2Page implements OnInit {
       title: `Tasks ${newTaskNumber}`,
       body: '',
       dueDate:'',
-      completed:'',
+      status:'',
     };
     this.current.push(newTask);
+    this.current_tasks ++;
+
+    this.updateOverallTasks();
   }
 
   editTask(task: any) {
     // Implement edit functionality
-    console.log('Edit Task:', task);
+    if(this.isEditable){
+      this.isEditable = false;
+      console.log('Edit Task:', task);
+    }
+
   }
 
   deleteTask(task: any) {
@@ -139,12 +129,19 @@ export class MainDashboard2Page implements OnInit {
     if (index !== -1) {
       this.current.splice(index, 1);
     }
+    this.updateOverallTasks();
   }
 
   saveTask(task: any) {
     // Implement save functionality
-    console.log('Save Task:', task);
+    if(!this.isEditable){
+      this.isEditable = true;
+      console.log('Save Task:', task);
+    }
   }
 
+  updateOverallTasks() {
+    this.overall_tasks = this.current_tasks + this.accomplished_tasks + this.missed_tasks;
+   }
  
 }

@@ -61,11 +61,21 @@
         <div class="task_cont">
           <ion-card *ngFor="let task of current" [hidden]="current.length === 0">
             <ion-card-header>
-              <ion-input [(ngModel)]="task.title" placeholder="Task Title"></ion-input>
-              <!--ion-card-subtitle [(ngModel)]="task.dueDate" placeholder="Due Date"></ion-card-subtitle-->
+              <ion-input [readonly]="isEditable" [(ngModel)]="task.title" placeholder="Task Title"></ion-input>
+              <div class="horizontal-buttons">
+                <ion-fab-button size="small" color="primary" (click)="editTask(task)">
+                  <ion-icon name="create-outline"></ion-icon>
+                </ion-fab-button>
+                <ion-fab-button size="small" color="primary" (click)="deleteTask(task)">
+                  <ion-icon name="trash-outline"></ion-icon>
+                </ion-fab-button>
+                <ion-fab-button size="small" color="primary" (click)="saveTask(task)">
+                  <ion-icon name="checkmark-outline"></ion-icon>
+                </ion-fab-button>
+              </div>
             </ion-card-header>
             <ion-card-content>
-              <ion-textarea [(ngModel)]="task.body" placeholder="Enter your task here..."></ion-textarea>
+              <ion-textarea [readonly]="isEditable" [(ngModel)]="task.body" placeholder="Enter your task here..."></ion-textarea>
             </ion-card-content>
           </ion-card>
         </div>
@@ -86,14 +96,17 @@
 
       <div class="container2-reminders"> <!-- REMINDER CONTAINER  -->
         <div class="header">
-          <h5>Reminders</h5>
+          <h5>Daily Reminder</h5>
           
         </div>
 
         <div class="reminder-collection">
           <ion-card>
             <ion-card-content>
-              fakfhlasdfjasldkfjaskldf
+              <p style="font-style: italic; font-size: 15px;">
+                "Courage is not having the strength to go on; it is going on when you don’t have the strength."
+              </p>
+              - Theodore Roosevelt
             </ion-card-content>
           </ion-card>
         </div>

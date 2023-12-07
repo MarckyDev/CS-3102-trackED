@@ -1,32 +1,25 @@
 ion-split-pane {
-    --side-width: 300px;
+  --side-width: 300px;
+  --side-max-width: 100%;
+}
+
+ion-menu {
+  width: 300px;
+}
+
+ion-item {
+  font-size: 1em !important;
+}
+
+@media screen and (max-width: 768px) {
+  ion-split-pane {
+    --side-width: 100%;
     --side-max-width: 100%;
   }
-  
+
   ion-menu {
-    width: 300px;
+    width: 100%;
   }
-  
-  ul {
-    list-style-type: none;
-  }
-  
-  li {
-    text-align: left;
-  }
-  
-  ion-item {
-    font-size: 1em !important;
-  }
-  
-  @media screen and (max-width: 768px) {
-    ion-split-pane {
-      --side-width: 100%;
-      --side-max-width: 100%;
-    }
-  
-    ion-menu {
-      width: 100%;
-    }
-  }
+}
+
   

@@ -1,49 +1,72 @@
 <ion-content>
-    <div class="flex-box-container
-                container
-                ion-justify-content-around">
-        <div class="flex-container-left
-                    container">
-            <div class="label">
-                <h2>{{first_name}} {{last_name}}'s TO DO</h2>
+  <div class="flex-box-container
+              container
+              ion-justify-content-around">
+      <div class="flex-container-left
+                  container">
+          <div class="label">
+              <h2>{{first_name}} {{last_name}}'s To do Dashboard</h2>
+          </div>
+          <div class="ion-segment-container 
+                      container
+                      ion-justify-content-evenly">
+              <ion-segment [(ngModel)]="selectedSegment" value="default">
+                  <ion-segment-button value="default">
+                      <ion-label>On Going</ion-label>
+                  </ion-segment-button>
+                  <ion-segment-button value="accomplished">
+                      <ion-label>Accomplished</ion-label>
+                  </ion-segment-button>
+                  <ion-segment-button value="missed">
+                      <ion-label>Missed</ion-label>
+                  </ion-segment-button>
+              </ion-segment>
+          </div>
+          <div class="to-do-container">
+            <p *ngIf="!todos.length && selectedSegment === 'default'" style="color: grey;">No ongoing tasks.</p>
+            <p *ngIf="!completedTodos.length && selectedSegment === 'accomplished'" style="color: grey;">No completed tasks.</p>
+            <p *ngIf="!missedTodos.length && selectedSegment === 'missed'" style="color: grey;">No missed tasks.</p>
+            
+            <div class="current_todos" *ngIf="selectedSegment === 'default'">
+              <!-- *************** ON GOING ******************** -->
+              <ion-card class="notes-card" *ngFor="let todo of todos" [hidden]="todos.length === 0">
+                <ion-card-header>
+                  <ion-input [readonly]="true" [(ngModel)]="todo.title"></ion-input>
+                </ion-card-header>
+                <ion-card-content>
+                  <ion-textarea [readonly]="true" [(ngModel)]="todo.body"></ion-textarea>
+                </ion-card-content>
+              </ion-card>
             </div>
-            <div class="ion-segment-container 
-                        container
-                        ion-justify-content-evenly">
-                <ion-segment value="default">
-                    <ion-segment-button value="default">
-                        <ion-label>On Going</ion-label>
-                    </ion-segment-button>
-                    <ion-segment-button value="accomplished">
-                        <ion-label>Accomplished</ion-label>
-                    </ion-segment-button>
-                    <ion-segment-button value="missed">
-                        <ion-label>Missed</ion-label>
-                    </ion-segment-button>
-                </ion-segment>
+
+            <div class="completed_todos" *ngIf="selectedSegment === 'accomplished'">
+              <!-- *************** COMPLETED ******************** -->
+              <ion-card class="notes-card" *ngFor="let completed of completedTodos" [hidden]="completedTodos.length === 0">
+                <ion-card-header>
+                  <ion-input [readonly]="true" [(ngModel)]="completed.title"></ion-input>
+                </ion-card-header>
+                <ion-card-content>
+                  <ion-textarea [readonly]="true" [(ngModel)]="completed.body"></ion-textarea>
+                </ion-card-content>
+              </ion-card>
             </div>
-            <div class="to-do-container">
-              <!-- div *ngFor = "let todo of todos" [class]="todo.status == 'ongoing' ? 'onGoing'""> < IDK KUNG ANOT ITUU suggested lang ni kumpareng blackbox AHSAHSAY -->
-            </div>   
-        </div> 
-        
-        <div class="flex-container-right
-                    container">
-      <div class="container2-reminders"> <!-- REMINDER CONTAINER  -->
-        <div class="header">
-          <h5>Reminders</h5>
-          
-        </div>
 
-        <div class="reminder-collection">
-          <ion-card>
-            <ion-card-content>
-              fakfhlasdfjasldkfjaskldf
-            </ion-card-content>
-          </ion-card>
-        </div>
-      </div>
+            <div class="missed_todos" *ngIf="selectedSegment === 'missed'">
+              <!-- *************** COMPLETED ******************** -->
+              <ion-card class="notes-card" *ngFor="let missed of missedTodos" [hidden]="missedTodos.length === 0">
+                <ion-card-header>
+                  <ion-input [readonly]="true" [(ngModel)]="missed.title"></ion-input>
+                </ion-card-header>
+                <ion-card-content>
+                  <ion-textarea [readonly]="true" [(ngModel)]="missed.body"></ion-textarea>
+                </ion-card-content>
+              </ion-card>
+            </div>
 
-    </div>
-    </div>       
+            
+            
+          </div>  
+
+      </div> 
+  </div>       
 </ion-content>
