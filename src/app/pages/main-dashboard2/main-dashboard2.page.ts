@@ -129,6 +129,7 @@ export class MainDashboard2Page implements OnInit {
     if (index !== -1) {
       this.current.splice(index, 1);
     }
+    this.current_tasks --;
     this.updateOverallTasks();
   }
 
