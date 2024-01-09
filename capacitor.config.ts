@@ -4,8 +4,13 @@ const config: CapacitorConfig = {
   appId: 'ionic.testingulet',
   appName: 'testingulet',
   webDir: 'www',
-  server: {
-    androidScheme: 'https'
+  plugins: {
+    LiveUpdates: {
+      appId: 'f073c2a9',
+      channel: 'Production',
+      autoUpdateMethod: 'background',
+      maxVersions: 2
+    }
   }
 };
 
